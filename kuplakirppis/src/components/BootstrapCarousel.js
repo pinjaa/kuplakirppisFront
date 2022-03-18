@@ -6,13 +6,13 @@ export default function BootstrapCarousel() {
         <Carousel>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="holder.js/800x400?text=First slide&bg=373940"
-      alt="First slide"
+      className="d-block w-99"
+      src="https://cdn.pixabay.com/photo/2017/09/25/13/12/cocker-spaniel-2785074__480.jpg"
+      alt="koira"
     />
     <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3>Koira</h3>
+      <p>Ostakaa hyvä koira tuirasta</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
