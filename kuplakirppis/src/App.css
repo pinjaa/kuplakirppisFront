@@ -5,12 +5,12 @@ header{
   text-align: center;
 }
 footer{
- background-color: rgb(141, 141, 141);
+ background-color: #8ceda7bd;
  bottom: 0;
  position: absolute;
  width: 100%;
  text-align: center;
 }
 body{
-  background-color: #fffcf0c7;
+  background-color: #fffffc;
 }
