@@ -17,8 +17,8 @@ export default function BootstrapCarousel() {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="holder.js/800x400?text=Second slide&bg=282c34"
+      className="d-block w-99"
+      src="https://cdn.pixabay.com/photo/2017/09/25/13/12/cocker-spaniel-2785074__480.jpg"
       alt="Second slide"
     />
 
@@ -29,8 +29,8 @@ export default function BootstrapCarousel() {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="holder.js/800x400?text=Third slide&bg=20232a"
+      className="d-block w-99"
+      src="https://cdn.pixabay.com/photo/2017/09/25/13/12/cocker-spaniel-2785074__480.jpg"
       alt="Third slide"
     />
 
