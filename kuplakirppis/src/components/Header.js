@@ -3,9 +3,9 @@ export default function Header(){
     return(
 <header>
       <h1>
-        kupla kirppis
+        Kuplakirppis
       </h1>
-      <h3>tervetuloa shoppailemaan</h3>
+      <h3>Tervetuloa shoppailemaan</h3>
       </header> 
     )
       }

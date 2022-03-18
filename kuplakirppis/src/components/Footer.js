@@ -2,7 +2,7 @@ import React from 'react'
 export default function Footer(){
     return(
         <footer>
-            <p>Kuplakirppis</p>
+            <h5>Kuplakirppis - Suomalainen verkkokauppa</h5>
             
         </footer>
     )

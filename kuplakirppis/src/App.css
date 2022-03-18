@@ -2,10 +2,15 @@ header{
   background-color: #b0ffc6;
   border: solid black 1px;
   border-radius: 2px;
+  text-align: center;
 }
 footer{
  background-color: rgb(141, 141, 141);
  bottom: 0;
  position: absolute;
  width: 100%;
+ text-align: center;
+}
+body{
+  background-color: #fffcf0c7;
 }
