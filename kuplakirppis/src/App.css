@@ -1,9 +1,15 @@
+.container {
+  margin: 0;
+  padding: 0;
+}
+
 header{
   background-color: #b0ffc6;
   border: solid black 1px;
   border-radius: 2px;
   text-align: center;
 }
+
 footer{
  background-color: #8ceda7bd;
  bottom: 0;
@@ -22,11 +28,33 @@ p {
   color: black;
 }
 
-#categories {
-  background-color: #b0ffc6;
-  width: 25%;
+.category-div {
+  min-width: 12em;
 }
 
-#categories > ul {
+#categories {
+  background-color: #b0ffc6;
+  height: 100vh;
+}
+
+.sidebar {
+  text-align: center;
+}
+
+.sidebar > img {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.sidebar > span {
+
+  font-size: 0.8em;
+}
+
+.sidebar > ul {
   list-style: none;
+  padding-top: 2em;
+  padding-left: 0;
 }

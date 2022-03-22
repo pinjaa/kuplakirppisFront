@@ -10,13 +10,19 @@ import Categories from './components/Categories';
 
 function App() {
   return (
-    <div>
-     <Header/>
-     <Navbar /> 
-     <Categories />
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nulla sequi distinctio, iusto delectus architecto dolor cupiditate sint aliquam, culpa expedita. Dolorum mollitia obcaecati unde tempora aliquam possimus labore!</p>
-        <BootstrapCarousel/>
-      <Footer/>
+    <div className='container'>
+      <div className='row no-gutters'>
+        <div className='category-div col-2'>
+          <Categories />
+        </div>
+        <div className='col'>
+          <Navbar />  
+        
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nulla sequi distinctio, iusto delectus architecto dolor cupiditate sint aliquam, culpa expedita. Dolorum mollitia obcaecati unde tempora aliquam possimus labore!</p>
+          <BootstrapCarousel/>
+        </div>
+        <Footer/>
+      </div>
     </div>
     
   );
