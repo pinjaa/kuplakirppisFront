@@ -1,8 +1,11 @@
 import React from 'react'
+import kuplalogo from '../images/kuplalogo1.0.png'
 
 export default function Categories() {
   return (
     <div id='categories'>
+        <img src={kuplalogo} alt="" />
+        <h5>Tervetuloa shoppailemaan</h5>
         <ul>
             <a href="#"><li>Vaatteet</li></a>
             <a href="#"><li>Elektroniikka ja kodinkoneet</li></a>

@@ -22,6 +22,11 @@ p {
   color: black;
 }
 
+#categories {
+  background-color: #b0ffc6;
+  width: 25%;
+}
+
 #categories > ul {
   list-style: none;
 }
