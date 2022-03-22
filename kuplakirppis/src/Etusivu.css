@@ -1,0 +1,12 @@
+.intro {
+    width: 80%;
+}
+
+.introtext {
+    text-align: center;
+}
+
+img {
+    max-width: 25vw;
+    height: 100%;
+}

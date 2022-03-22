@@ -3,11 +3,6 @@
   padding: 0;
 }
 
-.col {
-  margin: 0;
-  padding: 0;
-}
-
 header{
   background-color: #b0ffc6;
   border: solid black 1px;
@@ -33,10 +28,6 @@ p {
   color: black;
 }
 
-.category-div {
-  min-width: 12em;
-}
-
 #categories {
   background-color: #b0ffc6;
   height: 100vh;
@@ -44,7 +35,6 @@ p {
 
 .sidebar {
   text-align: center;
-  padding: 0;
   margin: 0;
 }
 
