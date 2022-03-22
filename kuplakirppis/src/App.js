@@ -10,8 +10,8 @@ import Categories from './components/Categories';
 
 function App() {
   return (
-    <div className='container'>
-      <div className='row no-gutters'>
+    <div className='container-fluid'>
+      <div className='row'>
         <div className='category-div col-2'>
           <Categories />
         </div>
