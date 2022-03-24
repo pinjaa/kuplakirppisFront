@@ -1,40 +1,44 @@
 import React from 'react'
+import { Search } from 'react-bootstrap-icons';
 
 export default function Navbar(){
     return (
-        <nav className="navbar navbar-expand-lg navbar-light">
-  <a className="navbar-brand" href="#">Navbar</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
+      <nav class="navbar navbar-expand-sm navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
-        <a className="nav-link" href="#">INFO</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">KIRJAUDU</a>
-      </li>
-      <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          OSTOSKORI
-        </a>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">Action</a>
-          <a className="dropdown-item" href="#">Another action</a>
-          <div className="dropdown-divider"></div>
-          <a className="dropdown-item" href="#">Something else here</a>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form"> <input type="text" class="form-control form-input" placeholder="Etsi löytöjä..."></input><span><Search color='#8ceda7' id='search-icon'/></span></div>
+            </div>
         </div>
-      </li>
+      </div>
       
-    </ul>
-    
-  </div>
-</nav>
+      <div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">INFO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">KIRJAUDU</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              OSTOSKORI
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </nav>
     )
 }
