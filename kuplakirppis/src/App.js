@@ -15,7 +15,7 @@ function App() {
         <div className='category-div col-2'>
           <Categories />
         </div>
-        <div className='col'>
+        <div className='col main-content'>
           <Navbar />  
         
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nulla sequi distinctio, iusto delectus architecto dolor cupiditate sint aliquam, culpa expedita. Dolorum mollitia obcaecati unde tempora aliquam possimus labore!</p>
