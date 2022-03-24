@@ -16,7 +16,7 @@ import VapaaAika from './pages/VapaaAika';
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Frontpage />} />
+     <Route path='/' element={<Frontpage />} />
      <Route path='/pages/Vaatteet' element={<Vaatteet/>}/>
      <Route path='/pages/Elektroniikka' element={<Elektroniikka/>}/>
      <Route path='/pages/Ajoneuvot' element={<Ajoneuvot/>}/>

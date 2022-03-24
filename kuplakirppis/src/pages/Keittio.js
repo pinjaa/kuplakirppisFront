@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Categories from '../components/Categories';
-
+import {Container, Row, Col} from 'react-bootstrap'
 export default function Frontpage() {
   return (
     <div className='container-fluid'>
