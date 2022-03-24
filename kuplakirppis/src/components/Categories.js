@@ -9,6 +9,7 @@ export default function Categories() {
       <div className='row'>
         <div className='col sidebar'>
           <img src={kuplalogo} alt="" />
+          <Link to="/">Etusivu</Link><br/>
           <span>Tervetuloa shoppailemaan</span>
         </div>
       </div>
