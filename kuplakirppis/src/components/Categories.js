@@ -5,7 +5,7 @@ import Vaatteet from '../pages/Vaatteet'
 import Elektroniikka from '../pages/Elektroniikka'
 import Ajoneuvot from '../pages/Ajoneuvot'
 import Hifi from '../pages/Hifi'
-import Keittiö from '../pages/Keittiö'
+import Keittio from '../pages/Keittio'
 import Koti from '../pages/Koti'
 import VapaaAika from '../pages/VapaaAika'
 
@@ -25,7 +25,7 @@ export default function Categories() {
             <li><Link to ="../pages/Elektroniikka">Elektroniikka ja Kodinkoneet</Link> </li>
             <li><Link to ="../pages/Ajoneuvot">Ajoneuvot</Link> </li>
             <li><Link to ="../pages/Hifi">Hifi</Link> </li>
-            <li><Link to ="../pages/Keittiö">Keittiö</Link> </li>
+            <li><Link to ="../pages/Keittio">Keittiö</Link> </li>
             <li><Link to ="../pages/Koti">Koti</Link> </li>
             <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li>
           </ul>
