@@ -17,13 +17,13 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Frontpage />} />
-     <Route path='/pages/Vaatteet' element={<Vaatteet/>}/>
-     <Route path='/pages/Elektroniikka' element={<Elektroniikka/>}/>
-     <Route path='/pages/Ajoneuvot' element={<Ajoneuvot/>}/>
-     <Route path='/pages/Hifi' element={<Hifi/>}/>
-     <Route path='/pages/Keittiö' element={<Keittiö/>}/>
-     <Route path='/pages/Koti' element={<Koti/>}/>
-     <Route path='/pages/VapaaAika' element={<VapaaAika/>}/>
+     <Route path='/Vaatteet' element={<Vaatteet/>}/>
+     <Route path='/Elektroniikka' element={<Elektroniikka/>}/>
+     <Route path='/Ajoneuvot' element={<Ajoneuvot/>}/>
+     <Route path='/Hifi' element={<Hifi/>}/>
+     <Route path='/Keittiö' element={<Keittiö/>}/>
+     <Route path='/Koti' element={<Koti/>}/>
+     <Route path='/VapaaAika' element={<VapaaAika/>}/>
     </Routes>
  
   );

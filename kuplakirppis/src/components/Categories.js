@@ -22,13 +22,13 @@ export default function Categories() {
       <div className='row'>
         <div className='col sidebar'>
           <ul>
-            <li><Link to ="../pages/Vaatteet">Vaatteet</Link> </li>
-            <li><Link to ="../pages/Elektroniikka">Elektroniikka ja Kodinkoneet</Link> </li>
-            <li><Link to ="../pages/Ajoneuvot">Ajoneuvot</Link> </li>
-            <li><Link to ="../pages/Hifi">Hifi</Link> </li>
-            <li><Link to ="../pages/Keittiö">Keittiö</Link> </li>
-            <li><Link to ="../pages/Koti">Koti</Link> </li>
-            <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li>
+            <li><Link to ="../Vaatteet">Vaatteet</Link> </li>
+            <li><Link to ="../Elektroniikka">Elektroniikka ja Kodinkoneet</Link> </li>
+            <li><Link to ="../Ajoneuvot">Ajoneuvot</Link> </li>
+            <li><Link to ="../Hifi">Hifi</Link> </li>
+            <li><Link to ="../Keittiö">Keittiö</Link> </li>
+            <li><Link to ="../Koti">Koti</Link> </li>
+            <li><Link to ="../VapaaAika">Vapaa-aika</Link> </li>
           </ul>
         </div>
       </div>
