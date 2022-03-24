@@ -15,12 +15,14 @@ export default function Categories() {
       <div className='row'>
         <div className='col sidebar'>
           <img src={kuplalogo} alt="" />
+          <Link to="/">Etusivu</Link><br/>
           <span>Tervetuloa shoppailemaan</span>
         </div>
       </div>
       <div className='row'>
         <div className='col sidebar'>
           <ul>
+<<<<<<< HEAD
             <li><Link to ="../pages/Vaatteet">Vaatteet</Link> </li>
             <li><Link to ="../pages/Elektroniikka">Elektroniikka ja Kodinkoneet</Link> </li>
             <li><Link to ="../pages/Ajoneuvot">Ajoneuvot</Link> </li>
@@ -28,6 +30,15 @@ export default function Categories() {
             <li><Link to ="../pages/Keittio">Keittiö</Link> </li>
             <li><Link to ="../pages/Koti">Koti</Link> </li>
             <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li>
+=======
+            <li><Link to ="../Vaatteet">Vaatteet</Link> </li>
+            <li><Link to ="../Elektroniikka">Elektroniikka ja Kodinkoneet</Link> </li>
+            <li><Link to ="../Ajoneuvot">Ajoneuvot</Link> </li>
+            <li><Link to ="../Hifi">Hifi</Link> </li>
+            <li><Link to ="../Keittiö">Keittiö</Link> </li>
+            <li><Link to ="../Koti">Koti</Link> </li>
+            <li><Link to ="../VapaaAika">Vapaa-aika</Link> </li>
+>>>>>>> 1ce472d80e6caa8b7047a87f8144d60068fe6579
           </ul>
         </div>
       </div>
