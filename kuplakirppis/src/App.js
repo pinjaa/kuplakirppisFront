@@ -16,7 +16,20 @@ import VapaaAika from './pages/VapaaAika';
 function App() {
   return (
     <Routes>
+<<<<<<< HEAD
      <Route path='/' element={<Frontpage />} />
+=======
+      <Route path='/' element={<Frontpage />} />
+<<<<<<< HEAD
+     <Route path='/pages/Vaatteet' element={<Vaatteet/>}/>
+     <Route path='/pages/Elektroniikka' element={<Elektroniikka/>}/>
+     <Route path='/pages/Ajoneuvot' element={<Ajoneuvot/>}/>
+     <Route path='/pages/Hifi' element={<Hifi/>}/>
+     <Route path='/pages/Keittio' element={<Keittiö/>}/>
+     <Route path='/pages/Koti' element={<Koti/>}/>
+     <Route path='/pages/VapaaAika' element={<VapaaAika/>}/>
+=======
+>>>>>>> f28ef5d4b50fe2c0879e223725559e05a900b503
      <Route path='/Vaatteet' element={<Vaatteet/>}/>
      <Route path='/Elektroniikka' element={<Elektroniikka/>}/>
      <Route path='/Ajoneuvot' element={<Ajoneuvot/>}/>
@@ -24,6 +37,7 @@ function App() {
      <Route path='/Keittio' element={<Keittio/>}/>
      <Route path='/Koti' element={<Koti/>}/>
      <Route path='/VapaaAika' element={<VapaaAika/>}/>
+>>>>>>> 1ce472d80e6caa8b7047a87f8144d60068fe6579
     </Routes>
  
   );
