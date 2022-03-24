@@ -1,5 +1,7 @@
 import React from 'react'
 import kuplalogo from '../images/kuplalogo1.0.png'
+import {Link} from 'react-router-dom'
+import Vaatteet from '../pages/Vaatteet'
 
 export default function Categories() {
   return (
@@ -13,7 +15,7 @@ export default function Categories() {
       <div className='row'>
         <div className='col sidebar'>
           <ul>
-            <a href="#"><li>Vaatteet</li></a>
+            <li><Link to ="../pages/Vaatteet">Vaatteet</Link> </li>
             <a href="#"><li>Elektroniikka ja kodinkoneet</li></a>
             <a href="#"><li>Vapaa-aika</li></a>
             <a href="#"><li>Keittiö</li></a>
