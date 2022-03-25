@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import kuplalogo from '../images/kuplalogo1.0.png'
 import {Link} from 'react-router-dom'
 import Vaatteet from '../pages/Vaatteet'
@@ -10,6 +11,21 @@ import Koti from '../pages/Koti'
 import VapaaAika from '../pages/VapaaAika'
 
 export default function Categories() {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+      console.log(url);
+      axios.get(url + 'products/getcategories.php')
+        .then((response) => {
+            const json = response.data;
+            setCategories(json);
+            console.log(json)
+        }).catch (error => {
+            alert(error.response === undefined ? error : error.response.data.error);
+        })
+    }, [])
+    
+
   return (
     <div id='categories' className='d-flex flex-column flex-shrink-0 container'>
       <div className='row'>
