@@ -12,11 +12,11 @@ export default function Navbar(){
       <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="form"> <input type="text" class="form-control form-input" placeholder="Etsi löytöjä..."></input><span><Search color='#8ceda7' id='search-icon'/></span></div>
+                <div class="form input-group"> <input type="text" class="form-control form-input" placeholder="Etsi löytöjä..."></input><div className='input-group-text'><span><Search color='#8ceda7' id='search-icon'/></span></div></div>
             </div>
         </div>
       </div>
-      
+
       <div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
