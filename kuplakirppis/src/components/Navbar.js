@@ -11,7 +11,7 @@ export default function Navbar(){
 
       <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form"> <input type="text" class="form-control form-input" placeholder="Etsi löytöjä..."></input><span><Search color='#8ceda7' id='search-icon'/></span></div>
             </div>
         </div>
