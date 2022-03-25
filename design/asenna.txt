@@ -8,3 +8,6 @@ npm install react-bootstrap-icons
 
 //ROUTER
 npm install react-router-domnpmnpnm
+
+//AXIOS
+npm i axios
