@@ -10,10 +10,10 @@ import Keittio from '../pages/Keittio'
 import Koti from '../pages/Koti'
 import VapaaAika from '../pages/VapaaAika'
 
-export default function Categories() {
+export default function Categories({url}) {
     const [categories, setCategories] = useState([]);
 
-    useEffect(() => {
+  /*  useEffect(() => {
       console.log(url);
       axios.get(url + 'products/getcategories.php')
         .then((response) => {
@@ -23,7 +23,7 @@ export default function Categories() {
         }).catch (error => {
             alert(error.response === undefined ? error : error.response.data.error);
         })
-    }, [])
+    }, []); */
     
 
   return (
