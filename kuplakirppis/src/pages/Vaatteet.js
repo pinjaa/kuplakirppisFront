@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import Categories from '../components/Categories';
 import {Container, Row, Col} from 'react-bootstrap'
 
-export default function Frontpage() {
+export default function Vaatteet() {
   return (
     
     <div className='container-fluid'>
