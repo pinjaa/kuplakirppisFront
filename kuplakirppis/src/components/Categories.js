@@ -13,7 +13,7 @@ import VapaaAika from '../pages/VapaaAika'
 export default function Categories({url}) {
     const [categories, setCategories] = useState([]);
 
-  /*  useEffect(() => {
+   /* useEffect(() => {
       console.log(url);
       axios.get(url + 'products/getcategories.php')
         .then((response) => {
@@ -44,7 +44,15 @@ export default function Categories({url}) {
             <li><Link to ="../pages/Hifi">Hifi</Link> </li>
             <li><Link to ="../pages/Keittio">Keittiö</Link> </li>
             <li><Link to ="../pages/Koti">Koti</Link> </li>
-            <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li>
+            <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li> 
+           {/* {categories.map(category => (
+              <li key={category.ktg_nro}>
+                <Link to={'/products/' + category.ktg_nro}>
+                  {category.ktg_nimi}
+                  
+                </Link>
+              </li>
+           ))} */}
           </ul>
         </div>
       </div>
