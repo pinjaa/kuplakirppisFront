@@ -24,6 +24,11 @@ export default function Vaatteet() {
     <Col><h5>Tuote 2</h5> <img src="https://cdn.pixabay.com/photo/2013/07/12/18/39/smartphone-153650_1280.png" /> <p>Tämä tuote on tälläinen</p></Col>
     <Col><h5>Tuote 3</h5> <img src="https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_1280.jpg"/> <p>Tämä tuote on tälläinen</p></Col>
   </Row>
+  <Row>
+    <Col><h5>Tuote 1</h5> <img src="https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716_1280.png"/> <p>Tämä tuote on tälläinen</p></Col>
+    <Col><h5>Tuote 2</h5> <img src="https://cdn.pixabay.com/photo/2013/07/12/18/39/smartphone-153650_1280.png" /> <p>Tämä tuote on tälläinen</p></Col>
+    <Col><h5>Tuote 3</h5> <img src="https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_1280.jpg"/> <p>Tämä tuote on tälläinen</p></Col>
+  </Row>
   
 </Container>
           
