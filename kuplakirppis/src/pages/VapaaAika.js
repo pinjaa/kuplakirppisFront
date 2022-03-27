@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Categories from '../components/Categories';
 
-export default function Frontpage() {
+export default function VapaaAika() {
   return (
     <div className='container-fluid'>
       <div className='row g-0'>

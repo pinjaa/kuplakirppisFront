@@ -15,7 +15,6 @@ import VapaaAika from './pages/VapaaAika';
 
 function App() {
   return (
-    <>
     <Routes>
      <Route path='/' element={<Frontpage />} />
      <Route path='/pages/Vaatteet' element={<Vaatteet/>}/>
@@ -26,7 +25,7 @@ function App() {
      <Route path='/pages/Koti' element={<Koti/>}/>
      <Route path='/pages/VapaaAika' element={<VapaaAika/>}/>
     </Routes>
-    </>
+ 
   );
 }
 

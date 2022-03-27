@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Categories from '../components/Categories';
 import {Container, Row, Col} from 'react-bootstrap'
-export default function Frontpage() {
+export default function Keittio() {
   return (
     <div className='container-fluid'>
       <div className='row g-0'>
