@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import BootstrapCarousel from './BootstrapCarousel';
 import Categories from './Categories';
+import Intro from './Intro';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -17,7 +18,7 @@ export default function Frontpage() {
         <div className='col'>
           <Navbar />  
         
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nulla sequi distinctio, iusto delectus architecto dolor cupiditate sint aliquam, culpa expedita. Dolorum mollitia obcaecati unde tempora aliquam possimus labore!</p>
+          <Intro />
           <BootstrapCarousel/>
         </div>
         <Footer/>
