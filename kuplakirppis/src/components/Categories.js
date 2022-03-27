@@ -9,6 +9,7 @@ import Hifi from '../pages/Hifi'
 import Keittio from '../pages/Keittio'
 import Koti from '../pages/Koti'
 import VapaaAika from '../pages/VapaaAika'
+import Tuote from '../pages/Tuote'
 
 export default function Categories({url}) {
     const [categories, setCategories] = useState([]);

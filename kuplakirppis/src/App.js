@@ -10,7 +10,7 @@ import Hifi from './pages/Hifi';
 import Keittio from './pages/Keittio';
 import Koti from './pages/Koti';
 import VapaaAika from './pages/VapaaAika';
-
+import Tuote from './pages/Tuote';
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
      <Route path='/pages/Keittio' element={<Keittio/>}/>
      <Route path='/pages/Koti' element={<Koti/>}/>
      <Route path='/pages/VapaaAika' element={<VapaaAika/>}/>
+     <Route path='/pages/Tuote' element={<Tuote/>}/>
     </Routes>
  
   );
