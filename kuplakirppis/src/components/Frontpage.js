@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Navbar from './Navbar';
-import BootstrapCarousel from './BootstrapCarousel';
+/* import BootstrapCarousel from './BootstrapCarousel'; */
 import Categories from './Categories';
 
 export default function Frontpage() {
@@ -16,7 +16,7 @@ export default function Frontpage() {
           <Navbar />  
         
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nulla sequi distinctio, iusto delectus architecto dolor cupiditate sint aliquam, culpa expedita. Dolorum mollitia obcaecati unde tempora aliquam possimus labore!</p>
-          <BootstrapCarousel/>
+         {/*  <BootstrapCarousel/> */}
         </div>
         <Footer/>
       </div>
