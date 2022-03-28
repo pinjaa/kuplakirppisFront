@@ -1,3 +1,10 @@
 vaalee vihree #b0ffc6
 tummempi #8ceda7
+tummin #2F4F38
+
 marmorin valkoinen #fffcf0c7
+
+violetti #C5A4ED
+tummempi #A05EF0
+tummin #492B6E
+vaaleampi #D4BBFF
