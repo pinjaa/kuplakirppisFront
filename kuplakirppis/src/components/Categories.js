@@ -28,7 +28,7 @@ export default function Categories({url}) {
     
 
   return (
-    <div id='categories' className='d-flex flex-column flex-shrink-0 container'style={{height:'100%'}} >
+    <div id='categories' className='d-flex flex-column flex-shrink-0 container'style={{height:'100'}} >
       <div className='row'>
         <div className='col sidebar'>
           <img src={kuplalogo} alt="" />
@@ -46,6 +46,7 @@ export default function Categories({url}) {
             <li><Link to ="../pages/Keittio">Keittiö</Link> </li>
             <li><Link to ="../pages/Koti">Koti</Link> </li>
             <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li> 
+            <a href="">Pöytävaraukset</a>
            {/* {categories.map(category => (
               <li key={category.ktg_nro}>
                 <Link to={'/products/' + category.ktg_nro}>

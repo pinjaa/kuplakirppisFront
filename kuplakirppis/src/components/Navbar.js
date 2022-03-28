@@ -4,12 +4,14 @@ import { Cart3 } from 'react-bootstrap-icons';
 
 export default function Navbar(){
     return (
-      <nav class="navbar navbar-expand-sm navbar-light">
+      <nav class="navbar navbar-expand-sm navbar-light"
+      style={{backgroundColor: '#b0ffc6'}}>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="container">
+      <div class="container"
+      style={{marginLeft: 500}}>
         <div class="row">
             <div class="col-md-12">
                 <div class="form input-group"> <input type="text" class="form-control form-input" placeholder="Etsi löytöjä..."></input><div className='input-group-text'><span><Search color='#8ceda7' id='search-icon'/></span></div></div>
