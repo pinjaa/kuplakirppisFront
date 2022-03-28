@@ -21,11 +21,11 @@ export default function Vaatteet() {
           <p>Osta hienoja vaatteita.</p>
          
           <Container>
-          <Row>
+          <Row style={{paddingLeft:'10px'}}>
     <Col>
     <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd' }}>
   <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716_1280.png" />
-  <Card.Body>
+  <Card.Body style={{paddingBottom:'10px'}}>
     <Card.Title>Kengät 50€</Card.Title>
   
     <Card.Text>
