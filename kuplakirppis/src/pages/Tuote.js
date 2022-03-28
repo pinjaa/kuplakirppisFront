@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Categories from '../components/Categories';
 import {Container, Row, Col} from 'react-bootstrap';
 import BootstrapCarousel from '../components/BootstrapCarousel';
+import { Cart3 } from 'react-bootstrap-icons';
 export default function Tuote() {
   return (
     <div className='container-fluid'>
@@ -18,11 +19,20 @@ export default function Tuote() {
           <p>s</p>
           <Container>
           <Row>
-    <Col style={{backgroundColor: "blue",textAlign:"center"}}> <h1 style={{backgroundColor: "red"}}>Hello Style!</h1> <img src="https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716_1280.png" style={{marginLeft:"auto",marginRight:"auto",display:"block"}}/> 
-    <p>Tämä tuote on tälläinen</p> </Col>
+    <Col style={{backgroundColor: "blue",textAlign:"center",height:"500px"}}>  <img src="https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716_1280.png" style={{marginLeft:"auto",marginRight:"auto",display:"block"}}/>
+ 
+    
+    </Col>
+    
+    <Col>
+    <h2 style={{backgroundColor: "red"}}>Air jordan </h2>
+    <p>hyvät popot vaikka häihin tai hautajaisiin</p> 
+    <p>150e</p>
+    <p><Cart3 size={55} color={'green'}></Cart3>Lisää ostoskoriin</p>
+    </Col>
    
   </Row>
-  <BootstrapCarousel/>
+ 
   
 </Container>
         </div>

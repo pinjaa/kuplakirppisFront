@@ -4,11 +4,11 @@ import kuplalogo from '../images/kuplalogo1.0.png'
 export default function BootstrapCarousel() {
   return (
     <div>
-        <Carousel variant='dark'>
+        <Carousel variant='dark' style={{alignItems:'center'}}>
   <Carousel.Item>
     <img
       className="d-block"
-      style={{marginLeft: 275,height:400}}
+      style={{height:350}}
       src={kuplalogo}
       alt="koira"
     />
@@ -20,7 +20,7 @@ export default function BootstrapCarousel() {
   <Carousel.Item>
     <img
       className="d-block"
-    style={{marginLeft: 275,height:400}}
+    style={{height:350}}
       src={kuplalogo}
       alt="Second slide"
     />
