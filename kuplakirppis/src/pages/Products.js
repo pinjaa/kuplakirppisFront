@@ -24,16 +24,15 @@ export default function Products({url}) {
 
   return (
     <div className='container-fluid'>
-      <div className='row g-0'>
-        
-        <div className='col'>
+      
+      <div className='row align-items-baseline'>
             
         
           <h3>{categoryName}</h3>
         {products.map(product => (
-            <div key={product.id}>
-                <Col>
-                  <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd' }}>
+            <div className='col-4' key={product.id}>
+                
+                  <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd', marginLeft:'10px'}}>
                     <Card.Img variant="top" src={require("../images/kuplalogo1.0.png")} />
                     <Card.Body style={{paddingBottom:'10px'}}>
                     <Card.Title>{product.tuotenimi} {product.hinta}€</Card.Title>
@@ -45,14 +44,14 @@ export default function Products({url}) {
       
                     </Card.Body>
                   </Card>
-                </Col>
+                
             </div>
             
         ))}
           
-        </div>
-        
       </div>
+        
+      
     </div>
   )
 }
