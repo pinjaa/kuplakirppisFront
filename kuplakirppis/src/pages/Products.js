@@ -30,10 +30,10 @@ export default function Products({url}) {
         
           <h3>{categoryName}</h3>
         {products.map(product => (
-            <div className='col-4' key={product.id}>
+            <div className='col' key={product.id}>
                 
                   <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd', marginLeft:'10px'}}>
-                    <Card.Img variant="top" src={require("../images/kuplalogo1.0.png")} />
+                    <Card.Img variant="top" src={product.image} />
                     <Card.Body style={{paddingBottom:'10px'}}>
                     <Card.Title>{product.tuotenimi} {product.hinta}€</Card.Title>
     
