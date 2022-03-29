@@ -15,9 +15,8 @@ export default function Tuote() {
         </div>
         <div className='col'>
           <Navbar />  
-          <h3>Kotis</h3>
-          <p>s</p>
-          <Container>
+       
+          <Container style={{paddingTop:"10%"}}>
           <Row>
     <Col style={{backgroundColor: "blue",textAlign:"center",height:"500px"}}>  <img src="https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716_1280.png" style={{marginLeft:"auto",marginRight:"auto",display:"block"}}/>
  
@@ -27,8 +26,8 @@ export default function Tuote() {
     <Col>
     <h2 style={{backgroundColor: "red"}}>Air jordan </h2>
     <p>hyvät popot vaikka häihin tai hautajaisiin</p> 
-    <p>150e</p>
-    <p><Cart3 size={55} color={'green'}></Cart3>Lisää ostoskoriin</p>
+    <h3>150e</h3>
+    <button className='btn btn-primary'><Cart3 size={55} color={'green'}></Cart3>Lisää ostoskoriin</button>
     </Col>
    
   </Row>
