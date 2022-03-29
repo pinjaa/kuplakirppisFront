@@ -10,11 +10,12 @@ import Keittio from '../pages/Keittio'
 import Koti from '../pages/Koti'
 import VapaaAika from '../pages/VapaaAika'
 import Tuote from '../pages/Tuote'
+import Products from '../pages/Products'
 
 export default function Categories({url}) {
     const [categories, setCategories] = useState([]);
 
-   /* useEffect(() => {
+    useEffect(() => {
       console.log(url);
       axios.get(url + 'products/getcategories.php')
         .then((response) => {
@@ -24,7 +25,7 @@ export default function Categories({url}) {
         }).catch (error => {
             alert(error.response === undefined ? error : error.response.data.error);
         })
-    }, []); */
+    }, []); 
     
 
   return (
@@ -39,22 +40,23 @@ export default function Categories({url}) {
       <div className='row'>
         <div className='col sidebar'>
           <ul>
-            <li><Link to ="../pages/Vaatteet">Vaatteet</Link> </li>
+            {/* <li><Link to ="../pages/Vaatteet">Vaatteet</Link> </li>
             <li><Link to ="../pages/Elektroniikka">Elektroniikka ja Kodinkoneet</Link> </li>
             <li><Link to ="../pages/Ajoneuvot">Ajoneuvot</Link> </li>
             <li><Link to ="../pages/Hifi">Hifi</Link> </li>
             <li><Link to ="../pages/Keittio">Keittiö</Link> </li>
             <li><Link to ="../pages/Koti">Koti</Link> </li>
-            <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li> 
-            <a href="">Pöytävaraukset</a>
-           {/* {categories.map(category => (
+            <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li>  */}
+            
+           {categories.map(category => (
               <li key={category.ktg_nro}>
                 <Link to={'/products/' + category.ktg_nro}>
                   {category.ktg_nimi}
                   
                 </Link>
               </li>
-           ))} */}
+           ))}
+           <a href="">Pöytävaraukset</a>
           </ul>
         </div>
       </div>
