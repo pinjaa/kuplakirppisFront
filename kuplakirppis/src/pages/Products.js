@@ -35,7 +35,7 @@ export default function Products({url}) {
                 {product.tuotenimi}
                 <Col>
                   <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd' }}>
-                    <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716_1280.png" />
+                    <Card.Img variant="top" src={require("../images/kuplalogo1.0.png")} />
                     <Card.Body style={{paddingBottom:'10px'}}>
                     <Card.Title>{product.tuotenimi} {product.hinta}€</Card.Title>
     
