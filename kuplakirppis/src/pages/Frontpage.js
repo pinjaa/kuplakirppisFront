@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Navbar from './Navbar';
-import BootstrapCarousel from './BootstrapCarousel';
-import Categories from './Categories';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import BootstrapCarousel from '../components/BootstrapCarousel';
+import Categories from '../components/Categories';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
