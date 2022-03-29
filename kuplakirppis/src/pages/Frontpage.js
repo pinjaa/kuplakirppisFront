@@ -11,16 +11,11 @@ export default function Frontpage() {
   return (
     <div className='container-fluid'>
       <div className='row g-0'>
-        <div className='category-div col-2'>
-          <Categories url={URL}/>
-        </div>
-        <div className='col'>
-          <Navbar />  
         
-          {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nulla sequi distinctio, iusto delectus architecto dolor cupiditate sint aliquam, culpa expedita. Dolorum mollitia obcaecati unde tempora aliquam possimus labore!</p> */}
+        <div className='col'>
           <BootstrapCarousel/>
         </div>
-        <Footer/>
+        
       </div>
     </div>
   )

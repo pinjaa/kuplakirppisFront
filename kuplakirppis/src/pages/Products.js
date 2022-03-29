@@ -26,11 +26,9 @@ export default function Products({url}) {
   return (
     <div className='container-fluid'>
       <div className='row g-0'>
-        <div className='category-div col-2'>
-          <Categories />
-        </div>
+        
         <div className='col'>
-          <Navbar />  
+            
         
           <h3>{categoryName}</h3>
         {products.map(product => (
@@ -40,7 +38,7 @@ export default function Products({url}) {
         ))}
           
         </div>
-        <Footer/>
+        
       </div>
     </div>
   )
