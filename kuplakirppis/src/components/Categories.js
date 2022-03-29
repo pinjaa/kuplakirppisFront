@@ -40,14 +40,6 @@ export default function Categories({url}) {
       <div className='row'>
         <div className='col sidebar'>
           <ul>
-            {/* <li><Link to ="../pages/Vaatteet">Vaatteet</Link> </li>
-            <li><Link to ="../pages/Elektroniikka">Elektroniikka ja Kodinkoneet</Link> </li>
-            <li><Link to ="../pages/Ajoneuvot">Ajoneuvot</Link> </li>
-            <li><Link to ="../pages/Hifi">Hifi</Link> </li>
-            <li><Link to ="../pages/Keittio">Keittiö</Link> </li>
-            <li><Link to ="../pages/Koti">Koti</Link> </li>
-            <li><Link to ="../pages/VapaaAika">Vapaa-aika</Link> </li>  */}
-            
            {categories.map(category => (
               <li key={category.ktg_nro}>
                 <Link to={'/products/' + category.ktg_nro}>
