@@ -32,7 +32,6 @@ export default function Products({url}) {
           <h3>{categoryName}</h3>
         {products.map(product => (
             <div key={product.id}>
-                {product.tuotenimi}
                 <Col>
                   <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd' }}>
                     <Card.Img variant="top" src={require("../images/kuplalogo1.0.png")} />
