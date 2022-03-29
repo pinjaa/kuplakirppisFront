@@ -2,7 +2,7 @@
 import React from 'react';
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
-import Frontpage from './components/Frontpage';
+import Frontpage from './pages/Frontpage';
 import Vaatteet from './pages/Vaatteet';
 import Elektroniikka from './pages/Elektroniikka';
 import Ajoneuvot from './pages/Ajoneuvot';
