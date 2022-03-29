@@ -1,9 +1,8 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import Categories from '../components/Categories';
+import {Container, Row, Col, Card, Button} from 'react-bootstrap'
+import { Cart3 } from 'react-bootstrap-icons';
 
 export default function Products({url}) {
     const [categoryName, setCategoryName] = useState('');
@@ -34,7 +33,22 @@ export default function Products({url}) {
         {products.map(product => (
             <div key={product.id}>
                 {product.tuotenimi}
+                <Col>
+                  <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd' }}>
+                    <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716_1280.png" />
+                    <Card.Body style={{paddingBottom:'10px'}}>
+                    <Card.Title>{product.tuotenimi} {product.hinta}€</Card.Title>
+    
+                    <Card.Text>
+                    {product.kuvaus}
+                    </Card.Text>
+                    <Cart3 size={35} color={'green'}></Cart3>
+      
+                    </Card.Body>
+                  </Card>
+                </Col>
             </div>
+            
         ))}
           
         </div>
