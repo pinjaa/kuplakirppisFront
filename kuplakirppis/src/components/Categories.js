@@ -2,15 +2,6 @@ import React, {useState,useEffect} from 'react'
 import axios from 'axios'
 import kuplalogo from '../images/kuplalogo1.0.png'
 import {Link} from 'react-router-dom'
-import Vaatteet from '../pages/Vaatteet'
-import Elektroniikka from '../pages/Elektroniikka'
-import Ajoneuvot from '../pages/Ajoneuvot'
-import Hifi from '../pages/Hifi'
-import Keittio from '../pages/Keittio'
-import Koti from '../pages/Koti'
-import VapaaAika from '../pages/VapaaAika'
-import Tuote from '../pages/Tuote'
-import Products from '../pages/Products'
 
 export default function Categories({url}) {
     const [categories, setCategories] = useState([]);
