@@ -7,13 +7,6 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import BootstrapCarousel from './components/BootstrapCarousel';
 import Categories from './components/Categories';
-import Vaatteet from './pages/Vaatteet';
-import Elektroniikka from './pages/Elektroniikka';
-import Ajoneuvot from './pages/Ajoneuvot';
-import Hifi from './pages/Hifi';
-import Keittio from './pages/Keittio';
-import Koti from './pages/Koti';
-import VapaaAika from './pages/VapaaAika';
 import Tuote from './pages/Tuote';
 import Products from './pages/Products';
 
