@@ -33,13 +33,6 @@ function App() {
         <Routes>
         <Route path='/' element={<Frontpage />} />
         <Route path='/products/:categoryId' element={<Products url={URL}/>} />
-        <Route path='/pages/Vaatteet' element={<Vaatteet/>}/>
-        <Route path='/pages/Elektroniikka' element={<Elektroniikka/>}/>
-        <Route path='/pages/Ajoneuvot' element={<Ajoneuvot/>}/>
-        <Route path='/pages/Hifi' element={<Hifi/>}/>
-        <Route path='/pages/Keittio' element={<Keittio/>}/>
-        <Route path='/pages/Koti' element={<Koti/>}/>
-        <Route path='/pages/VapaaAika' element={<VapaaAika/>}/>
         <Route path='/pages/Tuote' element={<Tuote/>}/>
         </Routes>
       </div>
