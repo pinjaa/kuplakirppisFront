@@ -10,6 +10,7 @@ import Categories from './components/Categories';
 import Tuote from './pages/Tuote';
 import Products from './pages/Products';
 import Order from './pages/Order';
+import Register from './pages/Register';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -30,6 +31,13 @@ function App() {
     localStorage.setItem('cart',JSON.stringify(newCart));
   }
 
+  //poista tuote ostoskorista
+  function removeFromCart(product) {
+    const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+    setCart(itemsWithoutRemoved);
+    localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
+  }
+
   return (
     <>
       <div className='container-fluid'>
@@ -43,8 +51,9 @@ function App() {
         <Routes>
         <Route path='/' element={<Frontpage />} />
         <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
-        <Route path='/order' element={<Order cart={cart} />} />
+        <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} />} />
         <Route path='/pages/Tuote' element={<Tuote/>}/>
+        <Route path='/pages/Register' element={<Register/>}/>
         </Routes>
       </div>
       </div>
