@@ -9,6 +9,7 @@ import BootstrapCarousel from './components/BootstrapCarousel';
 import Categories from './components/Categories';
 import Tuote from './pages/Tuote';
 import Products from './pages/Products';
+import Order from './pages/Order';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -42,6 +43,7 @@ function App() {
         <Routes>
         <Route path='/' element={<Frontpage />} />
         <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
+        <Route path='/order' element={<Order cart={cart} />} />
         <Route path='/pages/Tuote' element={<Tuote/>}/>
         </Routes>
       </div>
