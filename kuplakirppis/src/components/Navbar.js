@@ -1,8 +1,8 @@
 import React from 'react'
 import { Search } from 'react-bootstrap-icons';
-import { Cart3 } from 'react-bootstrap-icons';
+import Cart from './Cart';
 
-export default function Navbar(){
+export default function Navbar({cart}){
     return (
       <nav class="navbar navbar-expand-sm navbar-light"
       style={{backgroundColor: '#b0ffc6'}}>
@@ -29,7 +29,7 @@ export default function Navbar(){
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <Cart3 size={30}/>
+              <Cart cart={cart}/>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <div class="dropdown-item cart-item" href="#">
