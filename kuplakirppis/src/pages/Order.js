@@ -1,7 +1,7 @@
 import React from 'react'
 import uuid from 'react-uuid';
 
-export default function Order({cart}) {
+export default function Order({cart, removeFromCart}) {
     let sum = 0;
 
   return (
@@ -13,10 +13,10 @@ export default function Order({cart}) {
                     sum+=parseFloat(product.hinta);
                     return (
                         <tr key={uuid()}>
-                            <td><img style={{height: "100px"}} src={product.image} alt="" /> </td>
+                            <td><img style={{height: "100px"}} src={product.image} /> </td>
                             <td>{product.tuotenimi}</td>
                             <td>{product.hinta} €</td>
-                            <td></td>
+                            <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
                         </tr>
                     )
                 })}
