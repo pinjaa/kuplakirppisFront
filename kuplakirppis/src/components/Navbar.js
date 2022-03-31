@@ -5,7 +5,7 @@ import Cart from './Cart';
 function login(e) {
   console.log('koira');
 }
-export default function Navbar(){
+export default function Navbar({cart}){
     return (
       <nav class="navbar navbar-expand-sm navbar-light"
       style={{backgroundColor: '#b0ffc6'}}>
