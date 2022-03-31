@@ -10,6 +10,7 @@ import Categories from './components/Categories';
 import Tuote from './pages/Tuote';
 import Products from './pages/Products';
 import Order from './pages/Order';
+import Register from './pages/Register';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -52,6 +53,7 @@ function App() {
         <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
         <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} />} />
         <Route path='/pages/Tuote' element={<Tuote/>}/>
+        <Route path='/pages/Register' element={<Register/>}/>
         </Routes>
       </div>
       </div>
