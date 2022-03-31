@@ -34,18 +34,20 @@ export default function Navbar({cart}){
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"
             style={{padding:30, backgroundColor: '#b0ffc6' }}>
           <form onSubmit={login}>
-        <label>Kirjaudu sisään.</label>
+        <label><h6>Kirjaudu sisään.</h6></label>
 
 
 
          <input type="{email}" name='email' placeholder='sähköpostiosoite' /> 
          <p></p>
         <input type="{password}" name='password' placeholder='salasana' />
-<p></p>
-        <button className='btn btn-primary'>Kirjaudu sisään</button>
+        <p></p>
 
-        
-      </form>  
+        <button className='btn btn-success'>Kirjaudu sisään</button>
+
+      </form>  <br />
+      <button className='btn btn-success'>Rekisteröidy</button>
+     
             </div>
           </li>
           <li className='nav-item'>
