@@ -11,3 +11,6 @@ npm install react-router-dom
 
 //AXIOS
 npm i axios
+
+//UUID
+npm i react-uuid
