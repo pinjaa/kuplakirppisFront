@@ -6,6 +6,7 @@ export default function Cart({cart}) {
   return (
     <Link to="/order">
         <Cart3 size={30}/>
+        <span>{cart.length}</span>
     </Link>
   )
 }

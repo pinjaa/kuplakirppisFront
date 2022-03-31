@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import {Container, Row, Col, Card, Button} from 'react-bootstrap'
 import { Cart3 } from 'react-bootstrap-icons';
 
-export default function Products({url}) {
+export default function Products({url, addToCart}) {
     const [categoryName, setCategoryName] = useState('');
     const [products, setProducts] = useState([]);
 
@@ -40,7 +40,7 @@ export default function Products({url}) {
                     <Card.Text>
                     {product.kuvaus}
                     </Card.Text>
-                    <Cart3 size={35} color={'green'}></Cart3>
+                    <button onClick={e => addToCart(product)}><Cart3 size={35} color={'green'} ></Cart3></button>
       
                     </Card.Body>
                   </Card>
