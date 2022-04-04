@@ -1,7 +1,7 @@
 import React from 'react'
 import uuid from 'react-uuid';
 import { Link } from 'react-router-dom';
-import {Button} from 'react-bootstrap'
+import { Trash } from 'react-bootstrap-icons';
 
 export default function Order({cart, removeFromCart, emptyCart}) {
     let sum = 0;
@@ -28,7 +28,7 @@ export default function Order({cart, removeFromCart, emptyCart}) {
                     <td></td>
                 </tr>
                 <tr>
-                    <Link to="#"><button className='btn btn-success' onClick={() => emptyCart()}>Tyhjennä ostoskori</button></Link>
+                    <Link to="#"><button className='btn' style={{borderColor: "black"}} onClick={() => emptyCart()}><Trash size={20} color={'red'} ></Trash> Tyhjennä ostoskori</button></Link>
                     <Link to="../pages/orderForm"><button  className='btn btn-success'>Tilaa tuotteet</button></Link>
                 </tr>
             </tbody>
