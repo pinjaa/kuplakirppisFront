@@ -1,7 +1,7 @@
 import React from 'react'
 import uuid from 'react-uuid';
 
-export default function Order({cart, removeFromCart}) {
+export default function Order({cart, removeFromCart, emptyCart}) {
     let sum = 0;
 
   return (
@@ -24,6 +24,10 @@ export default function Order({cart, removeFromCart}) {
                     <td></td>
                     <td>{sum.toFixed(2)} €</td>
                     <td></td>
+                </tr>
+                <tr>
+                    <button onClick={() => emptyCart()}>Tyhjennä ostoskori</button>
+                    <button>Tilaa tuotteet</button>
                 </tr>
             </tbody>
         </table>
