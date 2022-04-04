@@ -1,7 +1,8 @@
-import React from 'react'
-
-export default function Register() {
-
+import React from 'react';
+import axios from 'axios';
+import { useEffect } from 'react';
+export default function Register({url}) {
+  
     useEffect(() => {
         axios.get(url + 'modules/register.php/')
         .then((response) => {

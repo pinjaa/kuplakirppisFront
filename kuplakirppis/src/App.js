@@ -53,7 +53,7 @@ function App() {
         <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
         <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} />} />
         <Route path='/pages/Tuote' element={<Tuote/>}/>
-        <Route path='/pages/Register' element={<Register/>}/>
+        <Route path='/pages/Register' element={<Register url={URL}/>}/>
         </Routes>
       </div>
       </div>
