@@ -1,10 +1,9 @@
 import React from 'react'
 import { Search } from 'react-bootstrap-icons';
 import Cart from './Cart';
+import Login from './Login';
 
-function login(e) {
-  console.log('koira');
-}
+
 export default function Navbar({cart}){
     return (
       <nav class="navbar navbar-expand-sm navbar-light"
@@ -33,19 +32,9 @@ export default function Navbar({cart}){
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"
             style={{padding:30, backgroundColor: '#b0ffc6' }}>
-          <form onSubmit={login}>
-        <label><h6>Kirjaudu sisään.</h6></label>
 
-
-
-         <input type="{email}" name='email' placeholder='sähköpostiosoite' /> 
-         <p></p>
-        <input type="{password}" name='password' placeholder='salasana' />
-        <p></p>
-
-        <button className='btn btn-success'>Kirjaudu sisään</button>
-
-      </form>  <br />
+              <Login></Login>
+          <br />
       <a href='../pages/Register'> <button className='btn btn-success'>Rekisteröidy</button></a>
      
             </div>
