@@ -11,6 +11,7 @@ import Tuote from './pages/Tuote';
 import Products from './pages/Products';
 import Order from './pages/Order';
 import Register from './pages/Register';
+import OrderForm from './pages/OrderForm';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -23,6 +24,9 @@ function App() {
     }
   }, [])
   
+  function emptyCart() {
+    setCart([]);
+  }
 
   //lisää tuote ostoskoriin
   function addToCart(product) {
@@ -51,9 +55,10 @@ function App() {
         <Routes>
         <Route path='/' element={<Frontpage />} />
         <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
-        <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} />} />
+        <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} />} />
         <Route path='/pages/Tuote' element={<Tuote/>}/>
         <Route path='/pages/Register' element={<Register url={URL}/>}/>
+        <Route path='/pages/OrderForm' element={<OrderForm/>}/>
         </Routes>
       </div>
       </div>
