@@ -40,7 +40,7 @@ export default function Products({url, addToCart}) {
                     <Card.Text>
                     {product.kuvaus}
                     </Card.Text>
-                    <button onClick={e => addToCart(product)}><Cart3 size={35} color={'green'} ></Cart3></button>
+                    <Button style={{backgroundColor: "white", borderColor: "white"}} onClick={e => addToCart(product)}><Cart3 size={35} color={'green'} ></Cart3></Button>
       
                     </Card.Body>
                   </Card>
