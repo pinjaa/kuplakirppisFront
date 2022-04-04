@@ -46,7 +46,7 @@ export default function Navbar({cart}){
         <button className='btn btn-success'>Kirjaudu sisään</button>
 
       </form>  <br />
-      <button className='btn btn-success'>Rekisteröidy</button>
+      <a href='../pages/Register'> <button className='btn btn-success'>Rekisteröidy</button></a>
      
             </div>
           </li>
