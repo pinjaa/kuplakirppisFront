@@ -58,3 +58,7 @@ a{
   text-decoration: none;
   color: black;
 }
+
+#tilauslomake > label {
+  margin-bottom: 5px;
+}

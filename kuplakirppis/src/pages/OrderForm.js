@@ -4,7 +4,7 @@ export default function OrderForm() {
   return (
     <div>
         <h3>Tilauslomake</h3>
-        <form action="">
+        <form action="" id="tilauslomake">
             <label>Etunimi <input type="text" /></label><br />
             <label>Sukunimi <input type="text" /></label><br />
             <label>Osoite <input type="text" /></label><br />
@@ -12,7 +12,7 @@ export default function OrderForm() {
             <label>Postitoimipaikka <input type="text" /></label><br />
             <label>Sähköposti <input type="text" /></label><br />
             <label>Puhelinnumero <input type="text" /></label><br />
-            <input type="submit" value="Tilaa tuotteet" />
+            <input className='btn btn-success' type="submit" value="Tilaa tuotteet" />
         </form>
     </div>
   )
