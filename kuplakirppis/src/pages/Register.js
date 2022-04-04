@@ -17,7 +17,7 @@ export default function Register({url}) {
       <div>
       <h1>Rekisteröidy</h1>
     
-    <form action="" method='post'>
+    <form action="http://localhost/kuplakirppisBack/modules/register.php" method='post'>
     <label>Etunimi</label>
     <input type="text"  name='etunimi' id='etunimi'/> <br /> <br />
     <label>Sukunimi</label>
