@@ -12,6 +12,7 @@ import Products from './pages/Products';
 import Order from './pages/Order';
 import Register from './pages/Register';
 import OrderForm from './pages/OrderForm';
+import LoginForm from './components/Login';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -59,6 +60,7 @@ function App() {
         <Route path='/pages/Tuote' element={<Tuote/>}/>
         <Route path='/pages/Register' element={<Register url={URL}/>}/>
         <Route path='/pages/OrderForm' element={<OrderForm/>}/>
+        <Route path='/components/Login' element={<LoginForm url={URL}/>}/>
         </Routes>
       </div>
       </div>
