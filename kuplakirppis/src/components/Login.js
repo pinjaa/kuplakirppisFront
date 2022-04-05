@@ -23,9 +23,9 @@ export default function LoginForm({url}) {
    <form action='http://localhost/kuplakirppisBack/modules/login.php' method='post'>
         <label><h6>Kirjaudu sisään.</h6></label>
 
-         <input type="email" name="email" id="email" placeholder='sähköpostiosoite' /> 
+         <input type="email" name="email" id="login_email" placeholder='sähköpostiosoite' /> 
          <p></p>
-        <input type="password" name="salasana" id='salasana' placeholder='salasana' />
+        <input type="password" name="salasana" id='login_salasana' placeholder='salasana' />
         <p></p>
 
         <button type='submit' className='btn btn-success'>Kirjaudu sisään</button>
