@@ -9,15 +9,16 @@ function login(e) {
 
 export default function LoginForm({url}) {
 
-    useEffect(() => {
+   /* useEffect(() => {
         axios.get(url + 'modules/login.php/')
         .then((response) => {
             const json = response.data;
+            console.log(response.data);
            
         }).catch(error => {
             alert(error.response === undefined ? error : error.response.data.error)
         })
-      }, [])
+      }, []) */
   return (
    
    <form action='http://localhost/kuplakirppisBack/modules/login.php' method='post'>
