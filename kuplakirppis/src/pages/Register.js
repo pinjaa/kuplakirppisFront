@@ -23,7 +23,7 @@ export default function Register({url}) {
     <label>Sukunimi</label>
     <input type="text" name='sukunimi' id='sukunimi'/> <br /><br />
     <label>Sähköpostiosoite</label>
-    <input type="email"name='email' id='email' /> <br /><br />
+    <input type="email" name='email' id='email' /> <br /><br />
     <label>Salasana</label>
     <input type="password" name='salasana' id='salasana'/> <br /><br />
     <button type='submit' className='btn btn-primary'>Rekisteröidy</button>
