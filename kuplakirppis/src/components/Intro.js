@@ -1,5 +1,5 @@
 import React from 'react'
-import kuplalogo from '../images/kuplalogo1.0.png'
+import kuplalogo from '../images/kuplalogo2.0.png'
 
 export default function Intro() {
   return (

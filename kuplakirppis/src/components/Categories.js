@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios'
-import kuplalogo from '../images/kuplalogo1.0.png'
+import kuplalogo from '../images/kuplalogo2.0.png'
 import {Link} from 'react-router-dom'
 
 export default function Categories({url}) {
