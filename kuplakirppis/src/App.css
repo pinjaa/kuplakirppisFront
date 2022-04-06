@@ -11,7 +11,7 @@ header{
 }
 
 footer{
- background-color: #8ceda7bd;
+ background-color: #8ceda7;
  bottom: 0;
  position: fixed;
  width: 100%;
@@ -29,7 +29,7 @@ p {
 }
 
 #categories {
-  background-color: #b0ffc6;
+  border-right: 2px solid #8ceda7;
   height: 100vh;
 }
 
