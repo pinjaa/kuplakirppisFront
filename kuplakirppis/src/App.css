@@ -28,6 +28,10 @@ p {
   color: black;
 }
 
+.nav-link {
+  font-weight: bold;
+}
+
 #categories {
   border-right: 2px solid #8ceda7;
   height: 100vh;
