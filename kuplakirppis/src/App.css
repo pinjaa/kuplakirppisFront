@@ -63,6 +63,24 @@ a{
   color: black;
 }
 
+a:hover {
+  color: black;
+}
+
+.category-link {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.category-link:hover {
+  cursor: pointer;
+}
+
+.category-link:hover {
+  background-color: #c4ffd5;
+}
+
 #tilauslomake > label {
   margin-bottom: 5px;
 }

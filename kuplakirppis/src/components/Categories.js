@@ -21,23 +21,23 @@ export default function Categories({url}) {
     <div id='categories' className='d-flex flex-column flex-shrink-0 container'style={{height:'100'}} >
       <div className='row'>
         <div className='col sidebar'>
-          <img src={kuplalogo} alt="" />
+          <img src={kuplalogo} alt="" style={{paddingBottom: '0.5em'}} />
           <Link to="/">Etusivu</Link><br/>
-          <span>Tervetuloa shoppailemaan</span>
+          <span style={{color: '#2F4F38'}}>Tervetuloa shoppailemaan</span>
         </div>
       </div>
       <div className='row'>
         <div className='col sidebar'>
           <ul>
            {categories.map(category => (
-              <li key={category.ktg_nro}>
+              <li key={category.ktg_nro} class='category-link'>
                 <Link to={'/products/' + category.ktg_nro}>
                   {category.ktg_nimi}
                   
                 </Link>
               </li>
            ))}
-           <a href="">Pöytävaraukset</a>
+           <li href="" class='category-link'>Pöytävaraukset</li>
           </ul>
         </div>
       </div>
