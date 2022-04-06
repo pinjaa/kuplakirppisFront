@@ -62,3 +62,8 @@ a{
 #tilauslomake > label {
   margin-bottom: 5px;
 }
+
+.main-container {
+  padding-top: 2em;
+  padding-left: 2em;
+}

@@ -52,7 +52,7 @@ function App() {
         </div>
         <div className='col'>
           <Navbar cart={cart}/> 
-      <div className='container'>
+      <div className='container main-container'>
         <Routes>
         <Route path='/' element={<Frontpage />} />
         <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
