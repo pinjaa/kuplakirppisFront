@@ -50,7 +50,7 @@ function App() {
         <div className='category-div col-2'>
           <Categories url={URL}/>
         </div>
-        <div className='col'>
+        <div style={{paddingBottom:'20px'}} className='col'>
           <Navbar cart={cart}/> 
       <div className='container main-container'>
         <Routes>
