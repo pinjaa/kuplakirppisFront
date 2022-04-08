@@ -5,7 +5,6 @@ import {Routes, Route} from 'react-router-dom';
 import Frontpage from './pages/Frontpage';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import BootstrapCarousel from './components/BootstrapCarousel';
 import Categories from './components/Categories';
 import Tuote from './pages/Tuote';
 import Products from './pages/Products';
@@ -14,6 +13,7 @@ import Register from './pages/Register';
 import OrderForm from './pages/OrderForm';
 import LoginForm from './components/Login';
 import demoTuote from './pages/demoTuote';
+import NotFound from './components/NotFound';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -51,7 +51,7 @@ function App() {
         <div className='category-div col-2'>
           <Categories url={URL}/>
         </div>
-        <div className='col'>
+        <div style={{paddingBottom:'20px'}} className='col'>
           <Navbar cart={cart}/> 
       <div className='container main-container'>
         <Routes>
@@ -63,6 +63,7 @@ function App() {
         <Route path='/pages/Register' element={<Register url={URL}/>}/>
         <Route path='/pages/OrderForm' element={<OrderForm/>}/>
         <Route path='/components/Login' element={<LoginForm url={URL}/>}/>
+        <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
       </div>

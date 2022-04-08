@@ -37,6 +37,7 @@ export default function Categories({url}) {
                 </Link>
               </li>
            ))}
+           <hr />
            <li href="" class='category-link'>Pöytävaraukset</li>
           </ul>
         </div>
