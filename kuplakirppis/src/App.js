@@ -12,7 +12,6 @@ import Order from './pages/Order';
 import Register from './pages/Register';
 import OrderForm from './pages/OrderForm';
 import LoginForm from './components/Login';
-import DemoTuote from './pages/DemoTuote';
 import NotFound from './components/NotFound';
 import Info from './pages/Info';
 
@@ -58,9 +57,8 @@ function App() {
         <Routes>
         <Route path='/' element={<Frontpage />} />
         <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
-        <Route path='/pages/DemoTuote/:categoryId' element={<DemoTuote url={URL} addToCart={addToCart}/>} />
+        <Route path='/pages/Tuote/:categoryId' element={<Tuote url={URL} addToCart={addToCart}/>} />
         <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} />} />
-        <Route path='/pages/Tuote' element={<Tuote/>}/>
         <Route path='/pages/Register' element={<Register url={URL}/>}/>
         <Route path='/pages/OrderForm' element={<OrderForm/>}/>
         <Route path='/components/Login' element={<LoginForm url={URL}/>}/>
