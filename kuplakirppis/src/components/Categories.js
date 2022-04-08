@@ -18,7 +18,7 @@ export default function Categories({url}) {
     
 
   return (
-    <div id='categories' className='d-flex flex-column flex-shrink-0 container'style={{height:'100'}} >
+    <div id='categories' className='d-flex flex-column flex-shrink-0 container'style={{height:'100', position:'fixed', width: '16vw'}} >
       <div className='row'>
         <div className='col sidebar'>
           <img src={kuplalogo} alt="" style={{paddingBottom: '0.5em'}} />

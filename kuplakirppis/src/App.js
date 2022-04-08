@@ -46,12 +46,10 @@ function App() {
 
   return (
     <>
-      <div className='container-fluid'>
-      <div className='row g-0'>
-        <div className='category-div col-2'>
+
           <Categories url={URL}/>
-        </div>
-        <div style={{paddingBottom:'20px'}} className='col'>
+
+        <div style={{paddingBottom:'20px', marginLeft: '16vw'}} className='col'>
           <Navbar cart={cart}/> 
       <div className='container main-container'>
         <Routes>
@@ -68,8 +66,6 @@ function App() {
       </div>
       </div>
         <Footer/>
-      </div>
-    </div>
     </>
  
   );
