@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom';
 import {Container, Row, Col, Card, Button} from 'react-bootstrap'
 import { Cart3 } from 'react-bootstrap-icons';
+import Tuote from './Tuote'
 
 export default function Products({url, addToCart}) {
     const [categoryName, setCategoryName] = useState('');
@@ -31,7 +32,7 @@ export default function Products({url, addToCart}) {
           <h3>{categoryName}</h3>
         {products.map(product => (
             <div className='col g-4' key={product.id}>
-                <Link to={'../pages/Tuote'}>
+                <Link to={'../pages/Tuote/' + product.ktg_nro + '/' + product.id}>
                   <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd', marginLeft:'10px'}}>
                     <Card.Img variant="top" src={url + "images/" + product.image} />
                     <Card.Body style={{paddingBottom:'10px'}}>

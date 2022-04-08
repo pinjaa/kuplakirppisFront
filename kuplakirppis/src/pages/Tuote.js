@@ -11,7 +11,7 @@ export default function Products({url, addToCart}) {
     let params = useParams();
 
     useEffect(() => {
-      axios.get(url + 'Products/getproducts.php/' + params.categoryId)
+      axios.get(url + 'products/getproduct.php/' + params.categoryId + params.productId)
       .then((response) => {
           const json = response.data;
           setCategoryName(json.category);
