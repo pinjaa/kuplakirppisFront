@@ -32,8 +32,8 @@ export default function Products({url, addToCart}) {
         {products.map(product => (
             <div className='col' key={product.id} >
                 <Link to="/" style={{float:"left"}}>Etusivu</Link>
-        <Container style={{border:"solid 10px #b0ffc6",marginLeft:"auto",marginRight:"auto",marginTop:"10%",alignContent:"center" }}>
-            <Row style={{padding:"10px"}}>
+        <Container >
+            <Row style={{padding:"10px",border:"solid 10px #b0ffc6",marginLeft:"auto",marginRight:"auto",marginTop:"10%",borderRadius:"10px" }}>
                
                 <Col style={{textAlign:"center"}}>  
                 
