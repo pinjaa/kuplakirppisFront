@@ -7,6 +7,26 @@ import {Container, Row, Col} from 'react-bootstrap';
 import BootstrapCarousel from '../components/BootstrapCarousel';
 import { Cart3 } from 'react-bootstrap-icons';
 import {Link} from 'react-router-dom';
+
+/*export default function Products({url, addToCart}) {
+  const [categoryName, setCategoryName] = useState('');
+  const [products, setProducts] = useState([]);
+
+  let params = useParams();
+
+  useEffect(() => {
+    axios.get(url + 'products/getproducts.php/' + params.categoryId)
+    .then((response) => {
+        const json = response.data;
+        setCategoryName(json.category);
+        setProducts(json.products);
+    }).catch(error => {
+        alert(error.response === undefined ? error : error.response.data.error)
+    })
+  }, [params]) 
+  } */
+
+  
 export default function Tuote() {
   return (
     <div className='container-fluid'>
@@ -32,7 +52,7 @@ export default function Tuote() {
     
     <h3>150e</h3>
     <h3>Tuira, Oulu</h3>
-    <button className='btn btn-primary' style={{marginTop:"10px"}}><Cart3 size={25} color={'white'}></Cart3> Lisää ostoskoriin</button>
+    <button className='btn btn-primary' style={{marginTop:"10px"}} onClick={e => addToCart(product)}><Cart3 size={25} color={'white'}></Cart3> Lisää ostoskoriin</button>
     </Col>
    
   </Row>
