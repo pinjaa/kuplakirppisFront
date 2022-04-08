@@ -28,23 +28,31 @@ export default function Products({url, addToCart}) {
       <div className='row align-items-baseline'>
             
         
-          <h3>{categoryName}</h3>
+        
         {products.map(product => (
             <div className='col' key={product.id} >
+                <Link to="/" style={{float:"left"}}>Etusivu</Link>
+        <Container style={{border:"solid 10px #b0ffc6",marginLeft:"auto",marginRight:"auto",marginTop:"10%",alignContent:"center" }}>
+            <Row style={{padding:"10px"}}>
+               
+                <Col style={{textAlign:"center"}}>  
                 
-                  <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd', marginLeft:'50%'}}>
-                    <Card.Img variant="top" src={product.image}/>
-                    <Card.Body style={{paddingBottom:'10px'}}>
-                    <Card.Title>{product.tuotenimi} {product.hinta}sesasdadade€</Card.Title>
-    
-                    <Card.Text>
-                    {product.kuvaus}
-                    </Card.Text>
-                    <Button style={{backgroundColor: "white", borderColor: "white"}} onClick={e => addToCart(product)}><Cart3 size={35} color={'green'} ></Cart3></Button>
-      
-                    </Card.Body>
-                  </Card>
+                <img src={product.image}/>
+                <p style={{paddingTop:"5px"}}>{product.kuvaus}</p>
                 
+                </Col>
+                
+                <Col>
+                <h2 style={{color:"green"}}>{product.tuotenimi}</h2>
+                
+                <h3>{product.hinta}€</h3>
+                <h3>Tuira, Oulu</h3>
+                <button className='btn btn-primary' style={{marginTop:"10px",backgroundColor:"purple"}} onClick={e => addToCart(product)}><Cart3 size={25} color={'white'}></Cart3> Lisää ostoskoriin</button>
+                </Col>
+            
+            </Row>
+        </Container>
+                 
             </div>
             
         ))}
@@ -55,3 +63,4 @@ export default function Products({url, addToCart}) {
     </div>
   )
 }
+//style={{marginLeft:"auto",marginRight:"auto",display:"block",}}
