@@ -12,7 +12,7 @@ import Order from './pages/Order';
 import Register from './pages/Register';
 import OrderForm from './pages/OrderForm';
 import LoginForm from './components/Login';
-import demoTuote from './pages/demoTuote';
+import DemoTuote from './pages/DemoTuote';
 import NotFound from './components/NotFound';
 
 const URL = 'http://localhost/kuplakirppisBack/';
@@ -57,7 +57,7 @@ function App() {
         <Routes>
         <Route path='/' element={<Frontpage />} />
         <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
-        <Route path='/pages/demoTuote/:categoryId' element={<Products url={URL} addToCart={addToCart}/>} />
+        <Route path='/pages/DemoTuote/:categoryId' element={<DemoTuote url={URL} addToCart={addToCart}/>} />
         <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} />} />
         <Route path='/pages/Tuote' element={<Tuote/>}/>
         <Route path='/pages/Register' element={<Register url={URL}/>}/>

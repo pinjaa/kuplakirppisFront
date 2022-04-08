@@ -11,7 +11,7 @@ export default function Products({url, addToCart}) {
     let params = useParams();
 
     useEffect(() => {
-      axios.get(url + 'demoTuote/getproducts.php/' + params.categoryId)
+      axios.get(url + 'Products/getproducts.php/' + params.categoryId)
       .then((response) => {
           const json = response.data;
           setCategoryName(json.category);
@@ -30,12 +30,12 @@ export default function Products({url, addToCart}) {
         
           <h3>{categoryName}</h3>
         {products.map(product => (
-            <div className='col' key={product.id}>
+            <div className='col' key={product.id} >
                 
-                  <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd', marginLeft:'10px'}}>
-                    <Card.Img variant="top" src={product.image} />
+                  <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd', marginLeft:'50%'}}>
+                    <Card.Img variant="top" src={product.image}/>
                     <Card.Body style={{paddingBottom:'10px'}}>
-                    <Card.Title>{product.tuotenimi} {product.hinta}€</Card.Title>
+                    <Card.Title>{product.tuotenimi} {product.hinta}sesasdadade€</Card.Title>
     
                     <Card.Text>
                     {product.kuvaus}
