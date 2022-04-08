@@ -1,5 +1,6 @@
 import React from 'react'
 import { Search } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 import Cart from './Cart';
 import Login from './Login';
 
@@ -23,7 +24,7 @@ export default function Navbar({cart}){
       <div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">INFO</a>
+            <Link className='nav-link' to={'../pages/Info'}>INFO</Link>
           </li>
           <li class="nav-item dropdown">
           <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

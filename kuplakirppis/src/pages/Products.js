@@ -30,7 +30,7 @@ export default function Products({url, addToCart}) {
         
           <h3>{categoryName}</h3>
         {products.map(product => (
-            <div className='col' key={product.id}>
+            <div className='col g-4' key={product.id}>
                 
                   <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd', marginLeft:'10px'}}>
                     <Card.Img variant="top" src={product.image} />
