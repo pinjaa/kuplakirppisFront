@@ -7,30 +7,30 @@ import Login from './Login';
 
 export default function Navbar({cart}){
     return (
-      <nav class="navbar navbar-expand-sm navbar-light"
+      <nav className="navbar navbar-expand-sm navbar-light"
       style={{backgroundColor: '#b0ffc6', paddingLeft: '2em', paddingRight: '2em'}}>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form input-group"> <input type="text" class="form-control form-input" placeholder="Etsi löytöjä..."></input><div className='input-group-text'><span><Search color='#8ceda7' id='search-icon'/></span></div></div>
+      <div className="container">
+        <div className="row">
+            <div className="col-md-12">
+                <div className="form input-group"> <input type="text" className="form-control form-input" placeholder="Etsi löytöjä..."></input><div className='input-group-text'><span><Search color='#8ceda7' id='search-icon'/></span></div></div>
             </div>
         </div>
       </div>
 
       <div>
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item active">
             <Link className='nav-link' to={'../pages/Info'}>INFO</Link>
           </li>
-          <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li className="nav-item dropdown">
+          <a className="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Kirjaudu
             </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"
+            <div className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"
             style={{padding:30, backgroundColor: '#b0ffc6' }}>
 
               <Login></Login>
