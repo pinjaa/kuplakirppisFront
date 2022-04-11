@@ -30,7 +30,7 @@ export default function Categories({url}) {
         <div className='col sidebar'>
           <ul>
            {categories.map(category => (
-              <li key={category.ktg_nro} class='category-link'>
+              <li key={category.ktg_nro} className='category-link'>
                 <Link to={'/products/' + category.ktg_nro}>
                   {category.ktg_nimi}
                   
