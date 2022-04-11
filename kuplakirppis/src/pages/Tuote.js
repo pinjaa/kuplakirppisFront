@@ -4,18 +4,18 @@ import { Link, useParams } from 'react-router-dom';
 import {Container, Row, Col, Card, Button} from 'react-bootstrap'
 import { Cart3 } from 'react-bootstrap-icons';
 
-export default function Products({url, addToCart}) {
+export default function Tuote({url, addToCart}) {
     const [categoryName, setCategoryName] = useState('');
     const [products, setProducts] = useState([]);
 
     let params = useParams();
 
     useEffect(() => {
-      axios.get(url + 'products/getproduct.php/' + params.categoryId + params.productId)
+      axios.get(url + 'products/getproduct.php/' + params.categoryId + '/' + params.productId)
       .then((response) => {
           const json = response.data;
           setCategoryName(json.category);
-          setProducts(json.products);
+          setProducts(json.product);
       }).catch(error => {
           alert(error.response === undefined ? error : error.response.data.error)
       })
@@ -37,7 +37,7 @@ export default function Products({url, addToCart}) {
                
                 <Col style={{textAlign:"center"}}>  
                 
-                <img src={product.image}/>
+                <img src={url + "images/" + product.image}/>
                 <p style={{paddingTop:"5px"}}>{product.kuvaus}</p>
                 
                 </Col>
