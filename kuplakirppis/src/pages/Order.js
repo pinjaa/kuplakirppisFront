@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 import { Link } from 'react-router-dom';
 import { Trash } from 'react-bootstrap-icons';
 
-export default function Order({cart, removeFromCart, emptyCart}) {
+export default function Order({url, cart, removeFromCart, emptyCart}) {
     let sum = 0;
 
   return (
@@ -15,7 +15,7 @@ export default function Order({cart, removeFromCart, emptyCart}) {
                     sum+=parseFloat(product.hinta);
                     return (
                         <tr key={uuid()}>
-                            <td><img style={{height: "100px"}} src={product.image} /> </td>
+                            <td><img style={{height: "100px"}} src={url + "images/" + product.image} /> </td>
                             <td>{product.tuotenimi}</td>
                             <td>{product.hinta} €</td>
                             <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
