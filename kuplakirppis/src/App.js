@@ -14,6 +14,7 @@ import OrderForm from './pages/OrderForm';
 import LoginForm from './components/Login';
 import NotFound from './components/NotFound';
 import Info from './pages/Info';
+import Feedback from './pages/Feedback';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -62,6 +63,7 @@ function App() {
         <Route path='/components/Login' element={<LoginForm url={URL}/>}/>
         <Route path='*' element={<NotFound />} />
         <Route path="/pages/Info" element={<Info />} />
+        <Route path="/pages/Feedback" element={<Feedback />} />
         </Routes>
       </div>
       </div>

@@ -3,16 +3,19 @@ import React from 'react'
 export default function Feedback() {
   return (
     <div>
-        <h3>Tilauslomake</h3>
+        <h3>Yhteystiedot</h3>
         <form action="http://localhost/kuplakirppisBack/modules/feedback.php" id="palautelomake" method='post'>
-            <label>Etunimi <input type="text" name='etunimi'/></label><br />
-            <label>Sukunimi <input type="text" name='sukunimi' /></label><br />
-            <label>Osoite <input type="text" name='osoite' /></label><br />
-            <label>Postinumero <input type="text" name='postinro' /></label><br />
-            <label>Postitoimipaikka <input type="text" name='postitmp' /></label><br />
-            <label>Sähköposti <input type="text" name='email' /></label><br />
-            <label>Puhelinnumero <input type="text" name='puhelinnro' /></label><br />
-            <input className='btn btn-success' type="submit" value="Tilaa tuotteet" />
+            <label> <input type="text" placeholder='Etunimi' name='etunimi'/></label><br />
+            <p></p>
+            <label> <input type="text" placeholder='Sukunimi' name='sukunimi' /></label><br />
+            <p></p>
+            <label> <input type="text" placeholder='Sähköposti' name='email' /></label><br />
+            <p></p>
+            <label> <input type="text" placeholder='Puhelinnumero' name='puhelinnro' /></label><br />
+            <p></p>
+            <label for="palaute">Anna Palautetta:</label>
+            <textarea class="form-control rounded-0" id="palaute" rows="3" style={{resize: "none"}}></textarea><br />
+            <input className='btn btn-success' type="submit" value="Lähetä" />
         </form>
     </div>
   )
