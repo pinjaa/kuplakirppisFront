@@ -18,14 +18,14 @@ export default function Register({url}) {
       <h1>Rekisteröidy</h1>
     
     <form action="http://localhost/kuplakirppisBack/modules/register.php" method='post'>
-    <label>Etunimi</label>
-    <input type="text"  name='etunimi' id='etunimi'/> <br /> <br />
-    <label>Sukunimi</label>
-    <input type="text" name='sukunimi' id='sukunimi'/> <br /><br />
-    <label>Sähköpostiosoite</label>
-    <input type="email" name='email' id='email' /> <br /><br />
-    <label>Salasana</label>
-    <input type="password" name='salasana' id='salasana'/> <br /><br />
+    
+    <input type="text" placeholder='Etunimi' name='etunimi' id='etunimi'/> <br /> <br />
+    
+    <input type="text" name='sukunimi' placeholder='Sukunimi' id='sukunimi'/> <br /><br />
+    
+    <input type="email" name='email' placeholder='Sähköpostiosoite' id='email' /> <br /><br />
+   
+    <input type="password" name='salasana' placeholder='Salasana' id='salasana'/> <br /><br />
     <button type='submit' className='btn btn-primary'>Rekisteröidy</button>
     </form>
     </div>
