@@ -64,6 +64,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route path="/pages/Info" element={<Info />} />
         <Route path="/pages/Feedback" element={<Feedback />} />
+        <Route path="/search/:searchPhrase" element={<Products url={URL} />} />
         </Routes>
       </div>
       </div>
