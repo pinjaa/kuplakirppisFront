@@ -29,6 +29,7 @@ function App() {
   
   function emptyCart() {
     setCart([]);
+    localStorage.removeItem('cart');
   }
 
   //lisää tuote ostoskoriin
