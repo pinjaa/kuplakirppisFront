@@ -16,14 +16,17 @@ export default function Navbar({cart}){
     }
   }
 
+  function openNav() {
+    document.getElementById("categories").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+
     return (
       <nav className="navbar navbar-expand-sm navbar-light"
-      style={{backgroundColor: '#b0ffc6', paddingLeft: '2em', paddingRight: '2em'}}>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
+      style={{backgroundColor: '#b0ffc6', paddingLeft: '0.8em', paddingRight: '2em'}}>
+      <button class="openbtn" onClick={openNav}>&#9776;</button>
 
-      <div className="container">
+      <div className="container" style={{paddingLeft: '2em'}}>
         <div className="row">
             <div className="col-md-12">
                 <div className="form input-group">

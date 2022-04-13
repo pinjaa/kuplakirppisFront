@@ -16,9 +16,14 @@ export default function Categories({url}) {
         })
     }, []); 
     
+    function closeNav() {
+      document.getElementById("categories").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
 
   return (
-    <div id='categories' className='d-flex flex-column flex-shrink-0 container'style={{height:'100', position:'fixed', width: '16vw'}} >
+    <div id='categories' className='sidebar-div d-flex flex-column flex-shrink-0 container'style={{height:'100', position:'fixed'}} >
+      <a href="javascript:void(0)" class="closebtn" onClick={closeNav}>&times;</a>
       <div className='row'>
         <div className='col sidebar'>
           <img src={kuplalogo} alt="" style={{paddingBottom: '0.5em'}} />

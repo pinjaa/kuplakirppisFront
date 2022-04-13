@@ -52,7 +52,7 @@ function App() {
 
           <Categories url={URL}/>
 
-        <div style={{paddingBottom:'20px', marginLeft: '16vw'}} className='col'>
+        <div id='main' style={{paddingBottom:'20px', transition: '0.5s'}} className='col'>
           <Navbar cart={cart}/> 
       <div className='container main-container'>
         <Routes>

@@ -24,8 +24,9 @@ img{
   height: 200px;
 }
 
-p {
-  color: black;
+.container {
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
@@ -35,6 +36,12 @@ p {
 #categories {
   border-right: 2px solid #8ceda7;
   height: 100vh;
+}
+
+.sidebar-div {
+  width: 0; /* 0 width - change this with JavaScript */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
 .sidebar {
@@ -61,6 +68,7 @@ p {
 a{
   text-decoration: none;
   color: black;
+  transition: 0.3s;
 }
 
 a:hover {
@@ -79,6 +87,23 @@ a:hover {
 
 .category-link:hover {
   background-color: #c4ffd5;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #37503E;
+  border: none;
+  background-color: transparent;
 }
 
 #tilauslomake > label {
