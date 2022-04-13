@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Search } from 'react-bootstrap-icons';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cart from './Cart';
 import Login from './Login';
+import axios from 'axios';
 
 
-export default function Navbar({cart}){
+export default function Navbar({url,cart}){
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+
   function executeSearch(e) {
     if (e.charCode === 13) {
       e.preventDefault();
-      Navigate('/products/' + search);
+      navigate('/products/' + search);
     }
   }
 
