@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Search } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cart from './Cart';
 import Login from './Login';
+import axios from 'axios';
 
 
-export default function Navbar({cart}){
+export default function Navbar({url,cart}){
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+
+  function executeSearch(e) {
+    if (e.charCode === 13) {
+      e.preventDefault();
+      navigate('/products/' + search);
+    }
+  }
+
+
+
     return (
       <nav className="navbar navbar-expand-sm navbar-light"
       style={{backgroundColor: '#b0ffc6', paddingLeft: '2em', paddingRight: '2em'}}>
@@ -16,7 +29,16 @@ export default function Navbar({cart}){
       <div className="container">
         <div className="row">
             <div className="col-md-12">
-                <div className="form input-group"> <input type="text" className="form-control form-input" placeholder="Etsi löytöjä..."></input><div className='input-group-text'><span><Search color='#8ceda7' id='search-icon'/></span></div></div>
+                <div className="form input-group">
+                <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyPress={(e) =>executeSearch(e)}
+                className="form-control mr-sm-2"
+                type="search"
+                placeholder='Search'
+                aria-label="Search" />
+                <div className='input-group-text'><span><Search color='#8ceda7' id='search-icon'/></span></div></div>
             </div>
         </div>
       </div>

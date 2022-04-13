@@ -15,6 +15,7 @@ import LoginForm from './components/Login';
 import NotFound from './components/NotFound';
 import Info from './pages/Info';
 import Feedback from './pages/Feedback';
+import Customer from './pages/Customer';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -65,6 +66,8 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route path="/pages/Info" element={<Info />} />
         <Route path="/pages/Feedback" element={<Feedback />} />
+        <Route path="/pages/Customer" element={<Customer />} />
+        <Route path="/search/:searchPhrase" element={<Products url={URL} />} />
         </Routes>
       </div>
       </div>

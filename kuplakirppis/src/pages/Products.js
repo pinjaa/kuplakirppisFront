@@ -6,21 +6,34 @@ import { Cart3 } from 'react-bootstrap-icons';
 import Tuote from './Tuote'
 
 export default function Products({url, addToCart}) {
-    const [categoryName, setCategoryName] = useState('');
+    const [name, setName] = useState('');
     const [products, setProducts] = useState([]);
 
     let params = useParams();
 
     useEffect(() => {
-      axios.get(url + 'products/getproducts.php/' + params.categoryId)
+      let address = '';
+      if (params.searchPhrase === undefined) {
+        address = url + 'products/getproducts.php/' + params.categoryId;
+      } else {
+        address = url + 'products/searchproducts.php/' + params.searchPhrase;
+      }
+
+   axios.get(address)
       .then((response) => {
           const json = response.data;
-          setCategoryName(json.category);
-          setProducts(json.products);
+          if (params.searchPhrase === undefined) {
+            setName(json.category);
+            setProducts(json.products);
+          } else {
+            setName(params.searchPhrase);
+            setProducts(json);
+          }
+         
       }).catch(error => {
           alert(error.response === undefined ? error : error.response.data.error)
       })
-    }, [params])
+    }, [params])  
     
 
   return (
@@ -29,7 +42,7 @@ export default function Products({url, addToCart}) {
       <div className='row align-items-baseline'>
             
         
-          <h3>{categoryName}</h3>
+          <h3>{name}</h3>
         {products.map(product => (
             <div className='col-md-4 g-4' key={product.id}>
                 <Link to={'../pages/Tuote/' + product.ktg_nro + '/' + product.id}>
