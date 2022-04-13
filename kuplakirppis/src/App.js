@@ -67,7 +67,7 @@ function App() {
         <Route path="/pages/Info" element={<Info />} />
         <Route path="/pages/Feedback" element={<Feedback />} />
         <Route path="/pages/Customer" element={<Customer />} />
-        <Route path="/search/:searchPhrase" element={<Products url={URL} />} />
+        <Route path="/search/:searchPhrase" element={<Products url={URL} addToCart={addToCart}/>} />
         </Routes>
       </div>
       </div>
