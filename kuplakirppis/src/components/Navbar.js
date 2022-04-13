@@ -5,7 +5,7 @@ import Cart from './Cart';
 import Login from './Login';
 
 
-export default function Navbar({url,cart}){
+export default function Navbar({cart}){
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
