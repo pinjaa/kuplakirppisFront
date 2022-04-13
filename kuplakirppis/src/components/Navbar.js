@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Search } from 'react-bootstrap-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import Cart from './Cart';
 import Login from './Login';
-import axios from 'axios';
 
 
 export default function Navbar({url,cart}){
@@ -13,11 +12,9 @@ export default function Navbar({url,cart}){
   function executeSearch(e) {
     if (e.charCode === 13) {
       e.preventDefault();
-      navigate('/products/' + search);
+      navigate('/search/' + search);
     }
   }
-
-
 
     return (
       <nav className="navbar navbar-expand-sm navbar-light"
