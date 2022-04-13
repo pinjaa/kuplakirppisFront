@@ -61,7 +61,7 @@ function App() {
         <Route path='/pages/Tuote/:categoryId/:productId' element={<Tuote url={URL} addToCart={addToCart}/>} />
         <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} url={URL}/>} />
         <Route path='/pages/Register' element={<Register url={URL}/>}/>
-        <Route path='/pages/OrderForm' element={<OrderForm cart={cart} url={URL}/>}/>
+        <Route path='/pages/OrderForm' element={<OrderForm cart={cart} emptyCart={emptyCart}/>}/>
         <Route path='/components/Login' element={<LoginForm url={URL}/>}/>
         <Route path='*' element={<NotFound />} />
         <Route path="/pages/Info" element={<Info />} />
