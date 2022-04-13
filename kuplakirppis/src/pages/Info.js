@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Feedback from './Feedback'
 
 export default function Info() {
   return (
@@ -20,6 +22,9 @@ export default function Info() {
             <ul>
                 <li style={{listStyleType:'none'}}>12-18</li>
             </ul>
+        </div>
+        <div>
+            <Link to={"../pages/Feedback"}><input type="button" value="Anna palautetta" /></Link>
         </div>
 
     </div>
