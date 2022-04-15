@@ -33,18 +33,21 @@ img{
   font-weight: bold;
 }
 
-#categories {
+.categories {
   border-right: 2px solid #8ceda7;
   height: 100vh;
+  width: 0px;
+}
+
+.categories-opennav {
   width: 250px;
 }
 
-#main {
+.main-opennav {
   margin-left: 250px;
 }
 
 .sidebar-div {
-  width: 0; /* 0 width - change this with JavaScript */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
@@ -94,14 +97,6 @@ a:hover {
   background-color: #c4ffd5;
 }
 
-.closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
 .openbtn {
   font-size: 24px;
   font-weight: bold;
@@ -121,11 +116,5 @@ a:hover {
 }
 
 @media screen and (max-width: 1100px){
-  #main {
-    margin-left: 0px;
-  }
 
-  #categories {
-    width: 0px;
-  }
 }

@@ -26,6 +26,11 @@ function App() {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')));
     }
+
+    if (window.innerWidth > 1100) {
+      document.getElementById("categories").classList.add("categories-opennav");
+      document.getElementById("main").classList.add("main-opennav");
+    }
   }, [])
   
   function emptyCart() {

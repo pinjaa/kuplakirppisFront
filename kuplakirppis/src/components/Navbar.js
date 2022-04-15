@@ -16,15 +16,15 @@ export default function Navbar({cart}){
     }
   }
 
-  function openNav() {
-    document.getElementById("categories").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+  function toggleNav() {
+    document.getElementById("categories").classList.toggle("categories-opennav");
+    document.getElementById("main").classList.toggle("main-opennav");
   }
 
     return (
       <nav className="navbar navbar-expand-sm navbar-light"
       style={{backgroundColor: '#b0ffc6', paddingLeft: '0.8em', paddingRight: '2em'}}>
-      <button class="openbtn" onClick={openNav}>&#9776;</button>
+      <button class="openbtn" onClick={toggleNav}>&#9776;</button>
 
       <div className="container" style={{paddingLeft: '2em'}}>
         <div className="row">
