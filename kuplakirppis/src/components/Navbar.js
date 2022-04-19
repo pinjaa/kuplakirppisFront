@@ -15,6 +15,12 @@ export default function Navbar({cart}){
       navigate('/search/' + search);
     }
   }
+  
+  function executeSearchIcon() {
+    if(search) {
+      navigate('/search/' + search);
+    }
+  }
 
   function toggleNav() {
     document.getElementById("categories").classList.toggle("categories-opennav");
@@ -34,11 +40,11 @@ export default function Navbar({cart}){
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyPress={(e) =>executeSearch(e)}
-                className="form-control mr-sm-2"
+                className="form-control mr-sm-2 searchbar"
                 type="search"
                 placeholder='Search'
                 aria-label="Search" />
-                <div className='input-group-text'><span><Search color='#8ceda7' id='search-icon'/></span></div></div>
+                <div className='input-group-text searchbar' onClick={executeSearchIcon}><span><Search color='#344C3B' id='search-icon'/></span></div></div>
             </div>
         </div>
       </div>
