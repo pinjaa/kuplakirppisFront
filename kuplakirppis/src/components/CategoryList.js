@@ -23,7 +23,7 @@ export default function CategoryList({url, selectedCategory, setSelectedCategory
         setSelectedCategory(categories.filter(item => item.ktg_nro === value));
     }
   return (
-    <select value={selectedCategory?.id} onChange={(e) => onCategoryChange(e.target.value)}>
+    <select value={selectedCategory?.ktg_nro} onChange={(e) => onCategoryChange(e.target.value)}>
         {categories.map((category) => (
             <option key={category.ktg_nro} value={category.ktg_nro}>{category.ktg_nimi}</option>
         ))}
