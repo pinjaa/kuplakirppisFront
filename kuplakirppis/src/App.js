@@ -16,6 +16,9 @@ import NotFound from './components/NotFound';
 import Info from './pages/Info';
 import Feedback from './pages/Feedback';
 import Customer from './pages/Customer';
+import CategoryList from './components/CategoryList';
+import ManageCategories from './admin/ManageCategories';
+import ManageProducts from './admin/ManageProducts';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -73,6 +76,9 @@ function App() {
         <Route path="/pages/Feedback" element={<Feedback />} />
         <Route path="/pages/Customer" element={<Customer />} />
         <Route path="/search/:searchPhrase" element={<Products url={URL} addToCart={addToCart}/>} />
+        <Route path="/components/CategoryList" element={<CategoryList url={URL} />} /> 
+        <Route path='/admin/ManageCategories' element={<ManageCategories url={URL}/>}/>
+        <Route path='/admin/ManageProducts' element={<ManageProducts url={URL}/>}/>
         </Routes>
       </div>
       </div>
