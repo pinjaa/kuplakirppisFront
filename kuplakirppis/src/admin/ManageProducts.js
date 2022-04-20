@@ -9,6 +9,7 @@ export default function ManageProducts({url}) {
     const [addingProduct, setAddingProduct] = useState(false);
     const [productName, setProductName] = useState('');
     const [price, setPrice] = useState('');
+    const [description, setDescription] = useState('');
 
     useEffect(() => {
       if (selectedCategory !== null) {
@@ -22,12 +23,12 @@ export default function ManageProducts({url}) {
             alert(error.response === undefined ? error : error.response.data.error);
         });
       }
-    }, [url, selectedCategory])
+    }, [url,selectedCategory])
     
 
     function saveProduct(e) {
         e.preventDefault();
-        const json = JSON.stringify({tuotenimi: productName, hinta: price, ktg_nro: selectedCategory.ktg_nro});
+        const json = JSON.stringify({name: productName, price: price, description: description, categoryID: selectedCategory.ktg_nro});
         axios.post(url + 'products/addProduct.php', json,{
             headers: {
                 'Content-Type' : 'application/json'
@@ -41,7 +42,7 @@ export default function ManageProducts({url}) {
             alert(error.response === undefined ? error : error.response.data.error);
         });
     }
-
+    
     if (!addingProduct) {
         return (
             <>
@@ -56,6 +57,7 @@ export default function ManageProducts({url}) {
                         <tr key={uuid()}>
                             <th>Tuotenimi</th>
                             <th>Hinta</th>
+                            <th>Kuvaus</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,6 +65,7 @@ export default function ManageProducts({url}) {
                             <tr key={uuid()}>
                                 <td>{product.tuotenimi}</td>
                                 <td>{product.hinta} €</td>
+                                <td>{product.kuvaus}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -85,6 +88,10 @@ export default function ManageProducts({url}) {
                     <div>
                         <label>Tuotteen hinta</label>
                         <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
+                    </div>
+                    <div>
+                        <label>Tuotteen kuvaus</label>
+                        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
                     <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(false)} >Peruuta</button>
                     <button type='submit'>Tallenna</button>
