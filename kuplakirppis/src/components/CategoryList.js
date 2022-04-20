@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 export default function CategoryList({url, selectedCategory, setSelectedCategory}) {
     const [categories, setCategories] = useState([]);
@@ -21,6 +21,9 @@ export default function CategoryList({url, selectedCategory, setSelectedCategory
 
     function onCategoryChange(value) {
         setSelectedCategory(categories.filter(item => item.ktg_nro === value));
+        
+        //console.log(value);
+        //console.log(categories);
     }
   return (
     <select value={selectedCategory?.ktg_nro} onChange={(e) => onCategoryChange(e.target.value)}>
