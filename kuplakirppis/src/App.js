@@ -19,6 +19,7 @@ import Customer from './pages/Customer';
 import CategoryList from './components/CategoryList';
 import ManageCategories from './admin/ManageCategories';
 import ManageProducts from './admin/ManageProducts';
+import Admin from './admin/Admin';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -79,6 +80,7 @@ function App() {
         <Route path="/components/CategoryList" element={<CategoryList url={URL} />} /> 
         <Route path='/admin/ManageCategories' element={<ManageCategories url={URL}/>}/>
         <Route path='/admin/ManageProducts' element={<ManageProducts url={URL}/>}/>
+        <Route path='/admin/Admin' element={<Admin />}/>
         </Routes>
       </div>
       </div>
