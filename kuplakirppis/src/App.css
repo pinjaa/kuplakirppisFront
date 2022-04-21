@@ -29,6 +29,29 @@ img{
   padding: 0;
 }
 
+.searchbar {
+  border: none;
+  height: 32px;
+  border-radius: 20px;
+  background-color: #fffffc;
+  color: #344C3B;
+}
+
+#search-icon {
+  font-size: 23px;
+  padding-bottom: 2px;
+}
+
+textarea:focus, input[type="search"]:focus {
+  border: none;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
 .nav-link {
   font-weight: bold;
 }
