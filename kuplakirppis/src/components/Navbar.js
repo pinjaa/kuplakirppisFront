@@ -73,10 +73,10 @@ export default function Navbar({cart, url}){
             <Link className='nav-link' to={'../pages/Info'}>INFO</Link>
           </li>
           <li className="nav-item dropdown">
-          <a className="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a className="nav-link" href="#"  id="dropdownMenuClickableOutside" role="button" data-bs-toggle="dropdown"  data-bs-auto-close="inside" aria-haspopup="true" aria-expanded="false" >
               Kirjaudu
             </a>
-            <div className="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown"
+            <div className="dropdown-menu dropdown-menu-end " aria-labelledby="dropdownMenuClickableOutside"
             style={{padding:30, backgroundColor: '#b0ffc6' }}>
 
               <Login>
