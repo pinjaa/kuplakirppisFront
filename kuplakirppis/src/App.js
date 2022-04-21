@@ -19,6 +19,7 @@ import Customer from './pages/Customer';
 import CategoryList from './components/CategoryList';
 import ManageCategories from './admin/ManageCategories';
 import ManageProducts from './admin/ManageProducts';
+import Cart from './components/Cart';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -61,7 +62,7 @@ function App() {
           <Categories url={URL}/>
 
         <div id='main' style={{paddingBottom:'20px', transition: '0.5s'}} className='col'>
-          <Navbar cart={cart}/> 
+          <Navbar cart={cart} url={URL}/> 
       <div className='container main-container'>
         <Routes>
         <Route path='/' element={<Frontpage />} />
@@ -81,6 +82,7 @@ function App() {
         <Route path='/admin/ManageProducts' element={<ManageProducts url={URL}/>}/>
         </Routes>
       </div>
+      <div className='mobile-cart'><Cart cart={cart}/></div>
       </div>
         <Footer/>
     </>
