@@ -24,17 +24,55 @@ img{
   height: 200px;
 }
 
-p {
-  color: black;
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.searchbar {
+  border: none;
+  height: 32px;
+  border-radius: 20px;
+  background-color: #fffffc;
+  color: #344C3B;
+}
+
+#search-icon {
+  font-size: 23px;
+  padding-bottom: 2px;
+}
+
+textarea:focus, input[type="search"]:focus {
+  border: none;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }
 
 .nav-link {
   font-weight: bold;
 }
 
-#categories {
+.categories {
   border-right: 2px solid #8ceda7;
   height: 100vh;
+  width: 0px;
+}
+
+.categories-opennav {
+  width: 250px;
+}
+
+.main-opennav {
+  margin-left: 250px;
+}
+
+.sidebar-div {
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
 .sidebar {
@@ -61,6 +99,7 @@ p {
 a{
   text-decoration: none;
   color: black;
+  transition: 0.3s;
 }
 
 a:hover {
@@ -81,6 +120,15 @@ a:hover {
   background-color: #c4ffd5;
 }
 
+.openbtn {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #37503E;
+  border: none;
+  background-color: transparent;
+}
+
 #tilauslomake > label {
   margin-bottom: 5px;
 }
@@ -88,4 +136,8 @@ a:hover {
 .main-container {
   padding-top: 2em;
   padding-left: 2em;
+}
+
+@media screen and (max-width: 1100px){
+
 }

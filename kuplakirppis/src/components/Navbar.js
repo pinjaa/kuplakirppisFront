@@ -1,32 +1,38 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Search } from 'react-bootstrap-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import Cart from './Cart';
 import Login from './Login';
-import axios from 'axios';
 
 
-export default function Navbar({url,cart}){
+export default function Navbar({cart}){
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
   function executeSearch(e) {
     if (e.charCode === 13) {
       e.preventDefault();
-      navigate('/products/' + search);
+      navigate('/search/' + search);
+    }
+  }
+  
+  function executeSearchIcon() {
+    if(search) {
+      navigate('/search/' + search);
     }
   }
 
-
+  function toggleNav() {
+    document.getElementById("categories").classList.toggle("categories-opennav");
+    document.getElementById("main").classList.toggle("main-opennav");
+  }
 
     return (
       <nav className="navbar navbar-expand-sm navbar-light"
-      style={{backgroundColor: '#b0ffc6', paddingLeft: '2em', paddingRight: '2em'}}>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
+      style={{backgroundColor: '#b0ffc6', paddingLeft: '0.8em', paddingRight: '2em'}}>
+      <button class="openbtn" onClick={toggleNav}>&#9776;</button>
 
-      <div className="container">
+      <div className="container" style={{paddingLeft: '2em'}}>
         <div className="row">
             <div className="col-md-12">
                 <div className="form input-group">
@@ -34,11 +40,11 @@ export default function Navbar({url,cart}){
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyPress={(e) =>executeSearch(e)}
-                className="form-control mr-sm-2"
+                className="form-control mr-sm-2 searchbar"
                 type="search"
                 placeholder='Search'
                 aria-label="Search" />
-                <div className='input-group-text'><span><Search color='#8ceda7' id='search-icon'/></span></div></div>
+                <div className='input-group-text searchbar' onClick={executeSearchIcon}><span><Search color='#344C3B' id='search-icon'/></span></div></div>
             </div>
         </div>
       </div>

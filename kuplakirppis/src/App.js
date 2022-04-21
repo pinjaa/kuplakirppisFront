@@ -16,6 +16,9 @@ import NotFound from './components/NotFound';
 import Info from './pages/Info';
 import Feedback from './pages/Feedback';
 import Customer from './pages/Customer';
+import CategoryList from './components/CategoryList';
+import ManageCategories from './admin/ManageCategories';
+import ManageProducts from './admin/ManageProducts';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -25,6 +28,11 @@ function App() {
   useEffect(() => {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')));
+    }
+
+    if (window.innerWidth > 1100) {
+      document.getElementById("categories").classList.add("categories-opennav");
+      document.getElementById("main").classList.add("main-opennav");
     }
   }, [])
   
@@ -52,7 +60,7 @@ function App() {
 
           <Categories url={URL}/>
 
-        <div style={{paddingBottom:'20px', marginLeft: '16vw'}} className='col'>
+        <div id='main' style={{paddingBottom:'20px', transition: '0.5s'}} className='col'>
           <Navbar cart={cart}/> 
       <div className='container main-container'>
         <Routes>
@@ -61,13 +69,16 @@ function App() {
         <Route path='/pages/Tuote/:categoryId/:productId' element={<Tuote url={URL} addToCart={addToCart}/>} />
         <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} url={URL}/>} />
         <Route path='/pages/Register' element={<Register url={URL}/>}/>
-        <Route path='/pages/OrderForm' element={<OrderForm cart={cart} url={URL}/>}/>
+        <Route path='/pages/OrderForm' element={<OrderForm cart={cart} emptyCart={emptyCart}/>}/>
         <Route path='/components/Login' element={<LoginForm url={URL}/>}/>
         <Route path='*' element={<NotFound />} />
         <Route path="/pages/Info" element={<Info />} />
         <Route path="/pages/Feedback" element={<Feedback />} />
         <Route path="/pages/Customer" element={<Customer />} />
-        <Route path="/search/:searchPhrase" element={<Products url={URL} />} />
+        <Route path="/search/:searchPhrase" element={<Products url={URL} addToCart={addToCart}/>} />
+        <Route path="/components/CategoryList" element={<CategoryList url={URL} />} /> 
+        <Route path='/admin/ManageCategories' element={<ManageCategories url={URL}/>}/>
+        <Route path='/admin/ManageProducts' element={<ManageProducts url={URL}/>}/>
         </Routes>
       </div>
       </div>

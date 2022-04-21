@@ -15,10 +15,9 @@ export default function Categories({url}) {
             alert(error.response === undefined ? error : error.response.data.error);
         })
     }, []); 
-    
 
   return (
-    <div id='categories' className='d-flex flex-column flex-shrink-0 container'style={{height:'100', position:'fixed', width: '16vw'}} >
+    <div id='categories' className=' categories sidebar-div d-flex flex-column flex-shrink-0 container'style={{height:'100', position:'fixed'}} >
       <div className='row'>
         <div className='col sidebar'>
           <img src={kuplalogo} alt="" style={{paddingBottom: '0.5em'}} />
