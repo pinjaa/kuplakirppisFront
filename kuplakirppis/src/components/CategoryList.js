@@ -20,10 +20,11 @@ export default function CategoryList({url, selectedCategory, setSelectedCategory
     }, [selectedCategory])
 
     function onCategoryChange(value) {
-        setSelectedCategory(categories.filter(item => item.ktg_nro === value));
+        setSelectedCategory((categories.filter(item => item.ktg_nro == value))[0]);
         
-        //console.log(value);
-        //console.log(categories);
+        /*=== ei toiminu koska ktg_nro on joskus char eikä int
+            sekä pelkkä categories filter lähettää arrayn jossa on jotain
+            turhaa sen ite kategoria-objektin jälkeen jollon manageproducts ei löydä ktg_nroa*/
     }
   return (
     <select value={selectedCategory?.ktg_nro} onChange={(e) => onCategoryChange(e.target.value)}>
