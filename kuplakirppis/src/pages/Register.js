@@ -13,11 +13,19 @@ export default function Register({url}) {
         })
       }, [])
 
+      function empty(e){
+        if(document.getElementById("etunimi").value==""||document.getElementById("sukunimi").value==""||document.getElementById("email").value==""||document.getElementById("salasana").value==""){
+         // alert("et voi asettaa tyhjiä arvoja")
+          document.getElementById("registerError").innerHTML="<div class='alert alert-danger' role='alert' id='erroralert'> Et voi asettaa tyhjiä arvoja! </div>"
+          e.preventDefault()
+        }
+      }
+
   return (
       <div>
       <h1>Rekisteröidy</h1>
     
-    <form action="http://localhost/kuplakirppisBack/modules/register.php" method='post'>
+    <form action="http://localhost/kuplakirppisBack/modules/register.php" method='post' onSubmit={empty}>
     
     <input type="text" placeholder='Etunimi' name='etunimi' id='etunimi'/> <br /> <br />
     
@@ -27,7 +35,8 @@ export default function Register({url}) {
    
     <input type="password" name='salasana' placeholder='Salasana' id='salasana'/> <br /><br />
     <button type='submit' className='btn btn-primary'>Rekisteröidy</button>
-    </form>
+    </form> <br />
+    <div id='registerError'></div>
     </div>
   )
 }

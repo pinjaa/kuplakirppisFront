@@ -55,10 +55,13 @@ export default function Navbar({cart}){
             <div className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"
             style={{padding:30, backgroundColor: '#b0ffc6' }}>
 
-              <Login></Login>
+              <Login>
+              </Login>
           <br />
       <a href='../pages/Register'> <button className='btn btn-success'>Rekisteröidy</button></a>
-     
+      <div class="alert alert-danger" role="alert" id='erroralert'>
+       Kirjautuminen ei onnistu!
+      </div>
             </div>
           </li>
           <li className='nav-item' style={{marginLeft: '2em'}}>
