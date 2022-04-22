@@ -2,7 +2,8 @@ import React from 'react'
 
 export default function Desk() {
   return (
-    <div>
+    <div className='row'>
+      <div className='col'>
         <h2>Pöytävaraukset</h2>
         <form>
             <label>Etunimi </label>
@@ -22,16 +23,32 @@ export default function Desk() {
                 <option value="">Valtava</option>
             </select>
             <br /> <br />
-            <label>Varauksen alkamispäivä</label>
-            <input type="date" />
+            <label>Varauksen alkamisviikko</label>
+            <input type="week" />
             <br /><br />
-            <label>Varauksen loppumispäivä</label>
-            <input type="date" />
+            <label>Viikkojen määrä</label>
+            <input type="number" />
             <br /><br />
             <button type='submit' className='btn btn-primary'>Varaa pöytä</button>
-
-
         </form>
+        </div>
+        <div className='col'>
+        <h2>
+          Pöytien hinnat
+        </h2>
+        <li>
+          Pieni - 15€/viikko
+        </li>
+        <li>
+          Keskikoko - 20€/viikko
+        </li>
+        <li>
+          Iso - 25€/viikko
+        </li>
+        <li>
+          Valtava - 30€/viikko
+        </li>
+        </div>
     </div>
   )
 }

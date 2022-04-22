@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 export default function Register({url}) {
-  
-    useEffect(() => {
+      url="http://localhost/kuplakirppisBack/"
+   /* useEffect(() => {
         axios.get(url + 'modules/register.php/')
         .then((response) => {
             const json = response.data;
@@ -11,7 +11,7 @@ export default function Register({url}) {
         }).catch(error => {
             alert(error.response === undefined ? error : error.response.data.error)
         })
-      }, [])
+      }, [])*/
 
       
       function empty(e){
@@ -23,7 +23,8 @@ export default function Register({url}) {
           axios.get(url + 'modules/register.php/')
         .then((response) => {
             const json = response.data;
-            document.getElementById("registerError").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+response.data +"  </div>"
+            //document.getElementById("registerError").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+response.data +"  </div>"
+            alert(response.data)
         }).catch(error => {
             alert(error.response === undefined ? error : error.response.data.error)
         })
