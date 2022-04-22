@@ -37,8 +37,8 @@ export default function Categories({url}) {
               </li>
            ))}
            <hr />
-           <li href="" className='category-link'>Pöytävaraukset</li>
-          </ul>
+           <Link to={'/pages/Desk'}>Pöytävaraukset</Link>
+           </ul>
         </div>
       </div>
     </div>
