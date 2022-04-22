@@ -1,19 +1,26 @@
 import React from 'react'
 
 export default function Desk() {
+
+  function deskcheck(e){
+    if(document.getElementById("deskfname").value==""||document.getElementById("desklname").value==""||document.getElementById("deskemail").value==""||document.getElementById("deskweek").value==""||document.getElementById("deskweeks").value==""){
+      document.getElementById("deskerror").innerHTML="<div class='alert alert-danger' role='alert' id='erroralert'> Et voi asettaa tyhjiä arvoja! </div>"
+      e.preventDefault();
+    }
+  }
   return (
     <div className='row'>
       <div className='col'>
         <h2>Pöytävaraukset</h2>
-        <form>
+        <form onSubmit={deskcheck}>
             <label>Etunimi </label>
-            <input type="text" />
+            <input type="text" id='deskfname'/>
             <br /><br />
             <label>Sukunimi </label>
-            <input type="text" />
+            <input type="text" id='desklname'/>
             <br /><br />
             <label>Sähköpostiosoite </label>
-            <input type="email" />
+            <input type="email" id='deskemail' />
             <br /><br />
             <label>Pöydän koko:</label>
             <select name="" id="">
@@ -24,12 +31,14 @@ export default function Desk() {
             </select>
             <br /> <br />
             <label>Varauksen alkamisviikko</label>
-            <input type="week" />
+            <input type="week" id='deskweek' />
             <br /><br />
             <label>Viikkojen määrä</label>
-            <input type="number" />
+            <input type="number" id='deskweeks' />
             <br /><br />
             <button type='submit' className='btn btn-primary'>Varaa pöytä</button>
+            <br /> <br />
+            <div id='deskerror'></div>
         </form>
         </div>
         <div className='col'>
