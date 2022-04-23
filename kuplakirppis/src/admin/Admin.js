@@ -17,11 +17,11 @@ export default function Admin() {
 
     <div class="input-group">
 			<label>Etunimi</label>
-			<input type="text" name="email"/>
+			<input type="text" name="etunimi"/>
 		</div>
     <div class="input-group">
 			<label>Sukunimi</label>
-			<input type="text" name="email"/>
+			<input type="text" name="sukunimi"/>
 		</div>
 		<div class="input-group">
 			<label>Email</label>
@@ -36,7 +36,7 @@ export default function Admin() {
 		</div>
 		<div class="input-group">
 			<label>Salasana</label>
-			<input type="password" name="password"/>
+			<input type="password" name="salasana"/>
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn btn-dark" name="register_btn"> + Create user</button>
