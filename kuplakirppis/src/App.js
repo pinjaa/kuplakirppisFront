@@ -11,7 +11,7 @@ import Products from './pages/Products';
 import Order from './pages/Order';
 import Register from './pages/Register';
 import OrderForm from './pages/OrderForm';
-import LoginForm from './components/Login';
+import Login from './components/Login';
 import NotFound from './components/NotFound';
 import Info from './pages/Info';
 import Feedback from './pages/Feedback';
@@ -73,7 +73,7 @@ function App() {
         <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} url={URL}/>} />
         <Route path='/pages/Register' element={<Register url={URL}/>}/>
         <Route path='/pages/OrderForm' element={<OrderForm cart={cart} emptyCart={emptyCart}/>}/>
-        <Route path='/components/Login' element={<LoginForm url={URL}/>}/>
+        <Route path='/components/Login' element={<Login />}/>
         <Route path='*' element={<NotFound />} />
         <Route path="/pages/Info" element={<Info />} />
         <Route path="/pages/Feedback" element={<Feedback />} />
