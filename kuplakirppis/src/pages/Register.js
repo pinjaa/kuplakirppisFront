@@ -19,7 +19,17 @@ export default function Register({url}) {
          // alert("et voi asettaa tyhjiä arvoja")
           document.getElementById("registerError").innerHTML="<div class='alert alert-danger' role='alert' id='erroralert'> Et voi asettaa tyhjiä arvoja! </div>"
           e.preventDefault();
-        }
+        } else {
+          axios.get(url + "modules/register.php") 
+          .then((response) => {
+            const json = response.data;
+            console.log(json)
+            document.getElementById("errorAlert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+ json +"  </div>"
+        }).catch(error => {
+            alert(error.response === undefined ? error : error.response.data.error)
+        })
+        
+        } 
       } 
 
   return (
@@ -38,6 +48,7 @@ export default function Register({url}) {
     <button type='submit' className='btn btn-primary'>Rekisteröidy</button>
     </form> <br />
     <div id='registerError'></div>
+    <div id='errorAlert'></div>
     </div>
   )
 }
