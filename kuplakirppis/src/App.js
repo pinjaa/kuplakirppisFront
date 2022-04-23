@@ -46,9 +46,20 @@ function App() {
 
   //lisää tuote ostoskoriin
   function addToCart(product) {
-    const newCart = [...cart,product];
-    setCart(newCart);
-    localStorage.setItem('cart',JSON.stringify(newCart));
+    var inCart = 0;
+    cart.forEach(item => {
+      if(item.id == product.id) {
+        inCart = 1;
+      }
+    });
+
+    if(inCart) {
+      alert("Tuote on jo ostoskorissa");
+    }else {
+      const newCart = [...cart,product];
+      setCart(newCart);
+      localStorage.setItem('cart',JSON.stringify(newCart));
+    }
   }
 
   //poista tuote ostoskorista
