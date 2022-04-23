@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 export default function Register({url}) {
-  
-    useEffect(() => {
+      url="http://localhost/kuplakirppisBack/"
+   /* useEffect(() => {
         axios.get(url + 'modules/register.php/')
         .then((response) => {
             const json = response.data;
@@ -11,13 +11,23 @@ export default function Register({url}) {
         }).catch(error => {
             alert(error.response === undefined ? error : error.response.data.error)
         })
-      }, [])
+      }, [])*/
 
+      
       function empty(e){
         if(document.getElementById("etunimi").value==""||document.getElementById("sukunimi").value==""||document.getElementById("email").value==""||document.getElementById("salasana").value==""){
          // alert("et voi asettaa tyhjiä arvoja")
           document.getElementById("registerError").innerHTML="<div class='alert alert-danger' role='alert' id='erroralert'> Et voi asettaa tyhjiä arvoja! </div>"
-          e.preventDefault()
+          e.preventDefault();
+        }else{
+          axios.get(url + 'modules/register.php/')
+        .then((response) => {
+            const json = response.data;
+            //document.getElementById("registerError").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+response.data +"  </div>"
+            alert(response.data)
+        }).catch(error => {
+            alert(error.response === undefined ? error : error.response.data.error)
+        })
         }
       }
 

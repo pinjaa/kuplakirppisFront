@@ -24,7 +24,7 @@ export default function Info() {
             </ul>
         </div>
         <div>
-            <Link to={"../pages/Feedback"}><input type="button" value="Anna palautetta" /></Link>
+            <Link to={"../pages/Feedback"}><input type="button" value="Anna palautetta" className='btn btn-primary' /></Link>
         </div>
 
     </div>

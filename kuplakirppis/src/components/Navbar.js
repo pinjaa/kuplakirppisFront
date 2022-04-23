@@ -83,9 +83,6 @@ export default function Navbar({cart, url}){
               </Login>
           <br />
       <a href='../pages/Register'> <button className='btn btn-success'>Rekisteröidy</button></a>
-      <div class="alert alert-danger" role="alert" id='erroralert'>
-       Kirjautuminen ei onnistu!
-      </div>
             </div>
           </li>
           <li className='nav-item' style={{marginLeft: '2em'}}>
@@ -108,7 +105,6 @@ export default function Navbar({cart, url}){
               </li>
            ))}
            <hr />
-           <li href="" className='category-link'>Pöytävaraukset</li>
           </ul>
           <div className='col sidebar'>
             <img src={kuplalogo} alt="" style={{paddingBottom: '0.5em', width:'150px'}} />
