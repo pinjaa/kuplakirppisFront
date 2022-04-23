@@ -1,9 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Admin() {
+  
 
   return (
+    
     <div>
+      <Link to="../Admin/ManageProducts">Ylläpidä tuotteita</Link> <br></br>
+      <Link to="../Admin/ManageCategories">Ylläpidä tuoteryhmiä</Link>
       <div class="header">
 		<h2>Admin - create user</h2>
 	</div>
