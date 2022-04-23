@@ -9,7 +9,7 @@ import { useEffect } from 'react';
   }*/
   
 
-export default function LoginForm({url}) {
+export default function Login() {
 
    /* useEffect(() => {
         axios.get(url + 'modules/login.php/')
@@ -28,7 +28,7 @@ export default function LoginForm({url}) {
           //alert("kirjautuminen ei onnistu")
           e.preventDefault()
         }else{
-            axios.get(url + 'modules/login.php/')
+            axios.get('http://localhost/kuplakirppisBack/modules/login.php')
           .then((response) => {
               const json = response.data;
               document.getElementById("erroralert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+response.data +"  </div>"
@@ -42,9 +42,7 @@ export default function LoginForm({url}) {
      
   return (
   
-   <form 
-   //action='http://localhost/kuplakirppisBack/modules/login.php' method='post' 
-   onSubmit={empty}>
+   <form /*onSubmit={empty}*/ action="http://localhost/kuplakirppisBack/modules/login.php" method="post">
         <label><h6>Kirjaudu sisään.</h6></label>
 
          <input type="email" name="email" id="login_email" placeholder='sähköpostiosoite'  /> 
