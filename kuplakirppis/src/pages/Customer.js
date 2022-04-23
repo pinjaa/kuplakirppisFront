@@ -1,10 +1,30 @@
-import React from 'react'
-import { useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import CategoryList from '../components/CategoryList';
+import uuid from 'react-uuid';
 
-const URL = 'http://localhost/kuplakirppisBack/modules/customer.php';
-export default function Customer() {
+export default function ManageProducts({url}) {
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [products, setProducts] = useState([])
+    const [addingProduct, setAddingProduct] = useState(false);
+    const [productName, setProductName] = useState('');
+    const [price, setPrice] = useState('');
+    const [description, setDescription] = useState('');
 
+    useEffect(() => {
+      if (selectedCategory !== null) {
+          axios.get(url + 'products/getproducts.php/' + selectedCategory.ktg_nro)
+          .then((response) => {
+              const json = response.data;
+            if(json) {
+                setProducts(json.products);
+            }
+          }).catch(error => {
+            alert(error.response === undefined ? error : error.response.data.error);
+        });
+      }
+    }, [url,selectedCategory])
+    
     const [file, setFile] =useState(null);
     const [text, setText] =useState("");
 
@@ -26,9 +46,83 @@ export default function Customer() {
             alert(error);
         }
     };
-    return (
-        <div className="container">
-            <form onSubmit={save}>
+
+    function saveProduct(e) {
+        e.preventDefault();
+        const json = JSON.stringify({name: productName, price: price, description: description, categoryID: selectedCategory.ktg_nro});
+        axios.post(url + 'products/customer.php', json,{
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        })
+        .then((response) => {
+            const updatedProducts = [...products,response.data];
+            setProducts(updatedProducts);
+            setAddingProduct(false);
+        }).catch(error => {
+            alert(error.response === undefined ? error : error.response.data.error);
+        });
+    }
+    
+    function doubleSave(e) {
+        saveProduct(e)
+        save(e)
+    }
+
+    if (!addingProduct) {
+        return (
+            <>
+                <h3>Ylläpidä tuotteita</h3>
+                <CategoryList 
+                        url={url}
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
+                />
+                <table className='table'>
+                    <thead>
+                        <tr key={uuid()}>
+                            <th>Tuotenimi</th>
+                            <th>Hinta</th>
+                            <th>Kuvaus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {products.map((product) => (
+                            <tr key={uuid()}>
+                                <td>{product.tuotenimi}</td>
+                                <td>{product.hinta} €</td>
+                                <td>{product.kuvaus}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <div>
+                    <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(true)}>Lisää</button>
+                </div>
+            </>
+        )
+    }
+    else {
+        return (
+            <>
+                <h3>Lisää uusi tuote</h3>
+                <form onSubmit={doubleSave}>
+                    <div>
+                        <label>Tuotteen nimi</label>
+                        <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
+                    </div>
+                    <div>
+                        <label>Tuotteen hinta</label>
+                        <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
+                    </div>
+                    <div>
+                        <label>Tuotteen kuvaus</label>
+                        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+                    </div>
+
+                    <div className="container">
+            <h2>Lisää tuote myyntiin</h2>
+            
                 <div>
                     <label>Kuva</label>
                     <input type="file" name="file" onChange={e => setFile(e.target.files[0])}></input>
@@ -46,22 +140,18 @@ export default function Customer() {
                     <label>text:</label>
                     <input type="text" name="text" value={text} onChange={e =>setText(e.target.value)} />
                 </div>
-                <button>Save</button><br />
+                
+                
+
                 <div>
-                <label> <input type="text" placeholder='Tuotenimi' name='Tuotenimi'/></label><br />
-            <p></p>
-            <label> <input type="text" placeholder='Hinta' name='Hinta' /></label><br />
-            <p></p>
-            <label> <input type="text" placeholder='Kategoria' name='Kategoria' /></label><br />
-            <p></p>
-         
-            <label for="palaute">Kuvaus:</label>
-            <textarea className="form-control rounded-0" id="kuvaus" rows="3" style={{resize: "none", maxWidth:"40vw", height:"10vw"}}></textarea><br />
-            <input className='btn btn-success' type="submit" value="Jätä ilmoitus" />
+
+                    <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(false)} >Peruuta</button>
+                    <button type='submit'>Tallenna</button>
                 </div>
-            </form>
-        </div>
-    );
-
-
+                </div>
+                </form>
+            </>
+        )
+    }
+  
 }

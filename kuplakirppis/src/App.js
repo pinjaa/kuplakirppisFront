@@ -77,7 +77,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route path="/pages/Info" element={<Info />} />
         <Route path="/pages/Feedback" element={<Feedback />} />
-        <Route path="/pages/Customer" element={<Customer />} />
+        <Route path="/pages/Customer" element={<Customer  url={URL} />} />
         <Route path="/search/:searchPhrase" element={<Products url={URL} addToCart={addToCart}/>} />
         <Route path="/components/CategoryList" element={<CategoryList url={URL} />} /> 
         <Route path='/admin/ManageCategories' element={<ManageCategories url={URL}/>}/>
