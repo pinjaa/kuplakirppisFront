@@ -66,6 +66,7 @@ export default function ManageProducts({url}) {
                                 <td>{product.tuotenimi}</td>
                                 <td>{product.hinta} €</td>
                                 <td>{product.kuvaus}</td>
+                               <a href=""> <button>Muokkaa tuotetta</button></a>
                             </tr>
                         ))}
                     </tbody>
