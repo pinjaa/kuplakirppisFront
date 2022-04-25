@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import CategoryList from '../components/CategoryList';
 import uuid from 'react-uuid';
 
@@ -87,7 +88,8 @@ export default function ManageProducts({url}) {
                                 <td>{product.tuotenimi}</td>
                                 <td>{product.hinta} €</td>
                                 <td>{product.kuvaus}</td>
-                               <a href=""> <button>Muokkaa tuotetta</button></a>
+                              <td> <Link to={"../admin/UpdateProduct/"+product.ktg_nro+"/"+product.id}><button className='btn btn-primary'>Muokkaa</button></Link>
+                              </td>
                             </tr>
                         ))}
                     </tbody>
