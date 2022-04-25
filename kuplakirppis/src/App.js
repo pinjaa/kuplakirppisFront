@@ -96,7 +96,7 @@ function App() {
         <Route path='/admin/ManageProducts' element={<ManageProducts url={URL}/>}/>
         <Route path='/admin/Admin' element={<Admin />}/>
         <Route path='/pages/Desk' element={<Desk/>}/>
-        <Route path='/admin/UpdateProduct' element={<UpdateProduct url={URL}/>}/>
+        <Route path='/admin/UpdateProduct/:categoryId/:productId' element={<UpdateProduct url={URL}/>}/>
         </Routes>
       </div>
       <div className='mobile-cart'><Cart cart={cart}/></div>
