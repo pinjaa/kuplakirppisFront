@@ -24,7 +24,7 @@ export default function Register({url}) {
         .then((response) => {
             const json = response.data;
             //document.getElementById("registerError").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+response.data +"  </div>"
-            alert(response.data)
+            console.log(response.data)
         }).catch(error => {
             alert(error.response === undefined ? error : error.response.data.error)
         })

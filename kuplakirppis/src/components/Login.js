@@ -43,7 +43,7 @@ export default function LoginForm({url}) {
   return (
   
    <form 
-   //action='http://localhost/kuplakirppisBack/modules/login.php' method='post' 
+   action='http://localhost/kuplakirppisBack/modules/login.php' method='post' 
    onSubmit={empty}>
         <label><h6>Kirjaudu sisään.</h6></label>
 
