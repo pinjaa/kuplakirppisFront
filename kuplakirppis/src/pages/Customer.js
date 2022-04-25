@@ -11,6 +11,9 @@ export default function ManageProducts({url}) {
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
 
+    const [file, setFile] =useState(null);
+    const [text, setText] =useState("");
+
     useEffect(() => {
       if (selectedCategory !== null) {
           axios.get(url + 'products/getproducts.php/' + selectedCategory.ktg_nro)
@@ -25,8 +28,7 @@ export default function ManageProducts({url}) {
       }
     }, [url,selectedCategory])
     
-    const [file, setFile] =useState(null);
-    const [text, setText] =useState("");
+    
 
     async function save(e) {
         e.preventDefault();
@@ -65,8 +67,9 @@ export default function ManageProducts({url}) {
     }
     
     function doubleSave(e) {
-        saveProduct(e)
-        save(e)
+        save(e);
+        saveProduct(e);
+        
     }
 
     if (!addingProduct) {
@@ -121,7 +124,7 @@ export default function ManageProducts({url}) {
                     </div>
 
                     <div className="container">
-            <h2>Lisää tuote myyntiin</h2>
+          
             
                 <div>
                     <label>Kuva</label>
