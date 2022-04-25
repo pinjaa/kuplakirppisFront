@@ -1,8 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-export default function Register({url}) {
-      url="http://localhost/kuplakirppisBack/"
+export default function Register() {
 
       const [fname, setFname] = useState("");
       const [lname, setLname] = useState("");
@@ -33,7 +32,7 @@ export default function Register({url}) {
             user: null
           });
 
-          axios.post(url + "modules/register.php", json, {
+          axios.post("http://localhost/kuplakirppisBack/modules/register.php", json, {
             headers: {
               'Accept' : 'application/json',
               'Content-Type' : 'application/json'
@@ -47,7 +46,7 @@ export default function Register({url}) {
             alert(error.response === undefined ? error : error.response.data.error)
         })
         }
-        
+
         e.preventDefault();
       } 
 

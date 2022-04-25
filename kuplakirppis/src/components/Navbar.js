@@ -70,13 +70,16 @@ export default function Navbar({cart, url}){
       <div class="wide-nav">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
+            <Link className='nav-link' to={'../admin/Admin'} style = {{display:'none'}}>ADMIN</Link>
+          </li>
+          <li className="nav-item active">
             <Link className='nav-link' to={'../pages/Info'}>INFO</Link>
           </li>
           <li className="nav-item dropdown">
-          <a className="nav-link" href="#"  id="dropdownMenuClickableOutside" role="button" data-bs-toggle="dropdown"  data-bs-auto-close="inside" aria-haspopup="true" aria-expanded="false" >
+          <a className="nav-link" href="#"  id="dropdownMenuClickableInside" role="button" data-bs-toggle="dropdown"  data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false" >
               Kirjaudu
             </a>
-            <div className="dropdown-menu dropdown-menu-end " aria-labelledby="dropdownMenuClickableOutside"
+            <div className="dropdown-menu dropdown-menu-end " aria-labelledby="dropdownMenuClickableInside"
             style={{padding:30, backgroundColor: '#b0ffc6' }}>
 
               <Login>
