@@ -22,6 +22,7 @@ import ManageProducts from './admin/ManageProducts';
 import Cart from './components/Cart';
 import Admin from './admin/Admin';
 import Desk from './pages/Desk';
+import UpdateProduct from './admin/UpdateProduct';
 
 const URL = 'http://localhost/kuplakirppisBack/';
 
@@ -95,6 +96,7 @@ function App() {
         <Route path='/admin/ManageProducts' element={<ManageProducts url={URL}/>}/>
         <Route path='/admin/Admin' element={<Admin />}/>
         <Route path='/pages/Desk' element={<Desk/>}/>
+        <Route path='/admin/UpdateProduct/:categoryId/:productId' element={<UpdateProduct url={URL}/>}/>
         </Routes>
       </div>
       <div className='mobile-cart'><Cart cart={cart}/></div>
