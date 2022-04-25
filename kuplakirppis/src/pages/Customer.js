@@ -69,11 +69,10 @@ export default function ManageProducts({url}) {
         });
     }
     
-   /*  function doubleSave(e) {
-        save(e);
-        saveProduct(e);
+     function piilo() {
+        document.getElementById("piilo").style.visibility = "visible";
         
-    } */
+    } 
 
     if (!addingProduct) {
         return (
@@ -87,7 +86,7 @@ export default function ManageProducts({url}) {
                 <table className='table'>
                     <thead>
                         <tr key={uuid()}>
-                            <th>Tuotenimi</th>
+                            <th>Tuotenimi</th> 
                             <th>Hinta</th>
                             <th>Kuvaus</th>
                         </tr>
@@ -118,44 +117,39 @@ export default function ManageProducts({url}) {
         
             
                 <div>
-                    <label>Kuva</label>
+                    <label>Kuva: </label>
                     <input type="file" name="file" onChange={e => setFile(e.target.files[0])}></input>
                     {file != null ? (
                         <>
                         <p>Filename: {file.name}</p>
-                        <p>filetype: {file.type}</p>
-                        <p>filesize: {file.size}</p>
+                        <p>Filetype: {file.type}</p>
+                        <p>Filesize: {file.size}</p>
+                        
                         </>
                     ):(
                         <p>File is not selected</p>
                     )}
                 </div>
-                <div>
-                    <label>text:</label>
-                    <input type="text" name="text" value={text} onChange={e =>setText(e.target.value)} />
-                </div>
+              
                 
-                <button>Lataa kuva</button>
-
+                <button onClick={piilo}>Lataa kuva</button>
+                        <p></p>
                 </div>
                 </form>
-                <form onSubmit={saveProduct}>
+                <form onSubmit={saveProduct} id="piilo" style={{visibility:"hidden"}}>
                     <div>
-                        <label>Tuotteen nimi</label>
-                        <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
-                    </div>
-                    <div>
-                        <label>Tuotteen hinta</label>
-                        <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
-                    </div>
-                    <div>
-                        <label>Tuotteen kuvaus</label>
-                        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-                    </div>
+                        <input type="text" placeholder='Tuotteen nimi' value={productName} onChange={(e) => setProductName(e.target.value)} />
+                    </div> <p></p>
+                    <div>                       
+                        <input type="text" placeholder='Tuotteen hinta' value={price} onChange={(e) => setPrice(e.target.value)} />
+                    </div> <p></p>
+                    <div>                       
+                        <textarea type="text" style={{resize:"none"}} placeholder='Tuotteen kuvaus' value={description} onChange={(e) => setDescription(e.target.value)} />
+                    </div> <p></p>
                     <div>
 
                     <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(false)} >Peruuta</button>
-                    <button type='submit'>Lisää tuote</button>
+                    <button className='btn btn-dark' type='submit'style={{marginLeft:"10px",backgroundColor:"purple"}}>Lisää tuote</button>
                 </div>
                 </form>
           

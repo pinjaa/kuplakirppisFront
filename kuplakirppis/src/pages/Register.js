@@ -23,14 +23,14 @@ export default function Register({url}) {
         if(document.getElementById("etunimi").value==""||document.getElementById("sukunimi").value==""||document.getElementById("email").value==""||document.getElementById("salasana").value==""){
          // alert("et voi asettaa tyhjiä arvoja")
           document.getElementById("registerError").innerHTML="<div class='alert alert-danger' role='alert' id='erroralert'> Et voi asettaa tyhjiä arvoja! </div>"
-          e.preventDefault();
         } else {
 
           const json = JSON.stringify({
             fname: fname,
             lname: lname,
             email: email,
-            pword: pword
+            pword: pword,
+            user: null
           });
 
           axios.post(url + "modules/register.php", json, {
@@ -46,8 +46,9 @@ export default function Register({url}) {
         }).catch(error => {
             alert(error.response === undefined ? error : error.response.data.error)
         })
+        }
         
-        } 
+        e.preventDefault();
       } 
 
   return (
