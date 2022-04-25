@@ -14,7 +14,7 @@ export default function ManageProducts({url}) {
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('')
     const [file, setFile] =useState(null);
-    const [text, setText] =useState("");
+   
 
     useEffect(() => {
       if (selectedCategory !== null) {
@@ -30,13 +30,16 @@ export default function ManageProducts({url}) {
       }
     }, [url,selectedCategory])
     
-    
+    function piilo() {
+        document.getElementById("piilo").style.visibility = "visible";
+        
+    }
 
     async function save(e) {
         e.preventDefault();
         const formData = new FormData();
         formData.append('file',file);
-        formData.append('test',text);
+        piilo();
 
         try {
             const response = await axios({
@@ -64,45 +67,21 @@ export default function ManageProducts({url}) {
             const updatedProducts = [...products,response.data];
             setProducts(updatedProducts);
             setAddingProduct(false);
+            document.getElementById("errorAlert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+ "Tuote lisättiin onnistuneesti" +"  </div>"
         }).catch(error => {
             alert(error.response === undefined ? error : error.response.data.error);
         });
     }
     
-     function piilo() {
-        document.getElementById("piilo").style.visibility = "visible";
-        
-    } 
+    
 
     if (!addingProduct) {
         return (
             <>
-                <h3>Ylläpidä tuotteita</h3>
-                <CategoryList 
-                        url={url}
-                        selectedCategory={selectedCategory}
-                        setSelectedCategory={setSelectedCategory}
-                />
-                <table className='table'>
-                    <thead>
-                        <tr key={uuid()}>
-                            <th>Tuotenimi</th> 
-                            <th>Hinta</th>
-                            <th>Kuvaus</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {products.map((product) => (
-                            <tr key={uuid()}>
-                                <td>{product.tuotenimi}</td>
-                                <td>{product.hinta} €</td>
-                                <td>{product.kuvaus}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+             <div id='errorAlert'></div>
+               <p>Tästä voit lisätä oman tuotteesi myyntiin.</p>
                 <div>
-                    <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(true)}>Lisää</button>
+                    <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(true)}>Aloita</button>
                 </div>
             </>
         )
@@ -116,7 +95,13 @@ export default function ManageProducts({url}) {
                 <div className="container">
         
             
-                <div>
+                <div> <label>Valitse kategoria:</label>
+                <CategoryList 
+                        url={url}
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
+                />
+                <p></p>
                     <label>Kuva: </label>
                     <input type="file" name="file" onChange={e => setFile(e.target.files[0])}></input>
                     {file != null ? (
@@ -124,7 +109,6 @@ export default function ManageProducts({url}) {
                         <p>Filename: {file.name}</p>
                         <p>Filetype: {file.type}</p>
                         <p>Filesize: {file.size}</p>
-                        
                         </>
                     ):(
                         <p>File is not selected</p>
@@ -132,7 +116,7 @@ export default function ManageProducts({url}) {
                 </div>
               
                 
-                <button onClick={piilo}>Lataa kuva</button>
+                <button>Lataa kuva</button>
                         <p></p>
                 </div>
                 </form>
@@ -149,7 +133,7 @@ export default function ManageProducts({url}) {
                     <div>
 
                     <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(false)} >Peruuta</button>
-                    <button className='btn btn-dark' type='submit'style={{marginLeft:"10px",backgroundColor:"purple"}}>Lisää tuote</button>
+                    <button className='btn btn-dark' type='submit'style={{marginLeft:"10px",backgroundColor:"purple"}} >Lisää tuote</button>
                 </div>
                 </form>
           
