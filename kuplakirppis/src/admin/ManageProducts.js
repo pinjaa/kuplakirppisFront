@@ -10,6 +10,8 @@ export default function ManageProducts({url}) {
     const [productName, setProductName] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
+    const [file, setFile] = useState(null);
+    const [image, setImage] = useState('')
 
     useEffect(() => {
       if (selectedCategory !== null) {
@@ -24,11 +26,30 @@ export default function ManageProducts({url}) {
         });
       }
     }, [url,selectedCategory])
+
+    async function save(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('file',file);
+
+        try {
+            const response = await axios({
+                method: "post",
+                url: url + 'products/uploadImage.php',
+                data: formData,
+                headers: {"Content-Type": "multipart/form-data"},
+            });
+            console.log(response);
+            setImage(response.data.filename)
+        } catch (error) {
+            alert(error);
+        }
+    };
     
 
     function saveProduct(e) {
         e.preventDefault();
-        const json = JSON.stringify({name: productName, price: price, description: description, categoryID: selectedCategory.ktg_nro});
+        const json = JSON.stringify({name: productName, price: price, image: image, description: description, categoryID: selectedCategory.ktg_nro});
         axios.post(url + 'products/addProduct.php', json,{
             headers: {
                 'Content-Type' : 'application/json'
@@ -66,6 +87,7 @@ export default function ManageProducts({url}) {
                                 <td>{product.tuotenimi}</td>
                                 <td>{product.hinta} €</td>
                                 <td>{product.kuvaus}</td>
+                               <a href=""> <button>Muokkaa tuotetta</button></a>
                             </tr>
                         ))}
                     </tbody>
@@ -80,6 +102,24 @@ export default function ManageProducts({url}) {
         return (
             <>
                 <h3>Lisää uusi tuote</h3>
+                <form onSubmit={save}>
+                    <div className="container">
+                        <div>
+                            <label>Tuotekuva</label>
+                            <input type="file" name="file" onChange={e => setFile(e.target.files[0])}></input>
+                            {file != null ? (
+                                <>
+                                <p>Filename: {file.name}</p>
+                                <p>filetype: {file.type}</p>
+                                <p>filesize: {file.size}</p>
+                                </>
+                            ):(
+                                <p>Tiedostoa ei valittu</p>
+                            )}
+                        </div>
+                    <button>Lataa kuva</button>
+                    </div>
+                </form>
                 <form onSubmit={saveProduct}>
                     <div>
                         <label>Tuotteen nimi</label>

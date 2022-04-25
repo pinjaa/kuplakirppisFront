@@ -42,7 +42,9 @@ export default function Login() {
      
   return (
   
-   <form /*onSubmit={empty}*/ action="http://localhost/kuplakirppisBack/modules/login.php" method="post">
+   <form 
+   action='http://localhost/kuplakirppisBack/modules/login.php' method='post' 
+   onSubmit={empty}>
         <label><h6>Kirjaudu sisään.</h6></label>
 
          <input type="email" name="email" id="login_email" placeholder='sähköpostiosoite'  /> 
