@@ -9,7 +9,7 @@ import { useEffect } from 'react';
   }*/
   
 
-export default function LoginForm({url}) {
+export default function Login() {
 
    /* useEffect(() => {
         axios.get(url + 'modules/login.php/')
@@ -28,7 +28,7 @@ export default function LoginForm({url}) {
           //alert("kirjautuminen ei onnistu")
           e.preventDefault()
         }else{
-            axios.get(url + 'modules/login.php/')
+            axios.get('http://localhost/kuplakirppisBack/modules/login.php')
           .then((response) => {
               const json = response.data;
               document.getElementById("erroralert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+response.data +"  </div>"

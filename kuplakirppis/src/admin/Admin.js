@@ -30,8 +30,8 @@ export default function Admin() {
 		<div class="input-group">
 			<label>Käyttäjätyyppi</label>
 			<select name="user_type" id="user_type" >
-				<option value="admin">Admin</option>
-				<option value="user">Asiakas</option>
+				<option value="K">Admin</option>
+				<option value="E">Asiakas</option>
 			</select>
 		</div>
 		<div class="input-group">
