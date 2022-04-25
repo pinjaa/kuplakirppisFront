@@ -1,8 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 export default function Register({url}) {
       url="http://localhost/kuplakirppisBack/"
+
+      const [fname, setFname] = useState("");
+      const [lname, setLname] = useState("");
+      const [email, setEmail] = useState("");
+      const [pword, setPword] = useState("");
    /* useEffect(() => {
         axios.get(url + 'modules/register.php/')
         .then((response) => {
@@ -20,7 +25,20 @@ export default function Register({url}) {
           document.getElementById("registerError").innerHTML="<div class='alert alert-danger' role='alert' id='erroralert'> Et voi asettaa tyhjiä arvoja! </div>"
           e.preventDefault();
         } else {
-          axios.get(url + "modules/register.php") 
+
+          const json = JSON.stringify({
+            fname: fname,
+            lname: lname,
+            email: email,
+            pword: pword
+          });
+
+          axios.post(url + "modules/register.php", json, {
+            headers: {
+              'Accept' : 'application/json',
+              'Content-Type' : 'application/json'
+            }
+          })
           .then((response) => {
             const json = response.data;
             console.log(json)
@@ -36,15 +54,15 @@ export default function Register({url}) {
       <div>
       <h1>Rekisteröidy</h1>
     
-    <form action="http://localhost/kuplakirppisBack/modules/register.php" method='post' onSubmit={empty} >
+    <form onSubmit={empty} >
     
-    <input type="text" placeholder='Etunimi' name='etunimi' id='etunimi'/> <br /> <br />
+    <input type="text" placeholder='Etunimi' name='etunimi' id='etunimi' value={fname} onChange={e => setFname(e.target.value)}/> <br /> <br />
     
-    <input type="text" name='sukunimi' placeholder='Sukunimi' id='sukunimi'/> <br /><br />
+    <input type="text" name='sukunimi' placeholder='Sukunimi' id='sukunimi' value={lname} onChange={e => setLname(e.target.value)}/> <br /><br />
     
-    <input type="email" name='email' placeholder='Sähköpostiosoite' id='email' /> <br /><br />
+    <input type="email" name='email' placeholder='Sähköpostiosoite' id='email' value={email} onChange={e => setEmail(e.target.value)}/> <br /><br />
    
-    <input type="password" name='salasana' placeholder='Salasana' id='salasana'/> <br /><br />
+    <input type="password" name='salasana' placeholder='Salasana' id='salasana' value={pword} onChange={e => setPword(e.target.value)}/> <br /><br />
     <button type='submit' className='btn btn-primary'>Rekisteröidy</button>
     </form> <br />
     <div id='registerError'></div>
