@@ -4,9 +4,11 @@ import { Link, useParams } from 'react-router-dom';
 import {Container, Row, Col, Card, Button} from 'react-bootstrap'
 import { Cart3 } from 'react-bootstrap-icons';
 
-export default function UpdateProduct({url, addToCart}) {
-    const [categoryName, setCategoryName] = useState('');
+export default function UpdateProduct({url}) {
     const [products, setProducts] = useState([]);
+    const [name, setName] = useState(null)
+    const [price, setPrice] = useState(null)
+    const [description, setDescription] = useState(null)
 
     let params = useParams();
 
@@ -14,12 +16,29 @@ export default function UpdateProduct({url, addToCart}) {
       axios.get(url + 'products/getproduct.php/' + params.categoryId + '/' + params.productId)
       .then((response) => {
           const json = response.data;
-          setCategoryName(json.category);
           setProducts(json.product);
       }).catch(error => {
           alert(error.response === undefined ? error : error.response.data.error)
       })
     }, [params])
+
+    function updateProduct(e) {
+      e.preventDefault();
+      const json = JSON.stringify({name: name, price: price, description: description});
+      axios.post(url + 'products/updateProducts.php/' + params.categoryId + '/' + params.productId, json,{
+          headers: {
+              'Content-Type' : 'application/json'
+          }
+      })
+      .then((response) => {
+        const json = response.data
+          setName(json.tuotenimi)
+          setPrice(json.hinta)
+          setDescription(json.kuvaus)
+      }).catch(error => {
+          alert(error.response === undefined ? error : error.response.data.error);
+      });
+  }
     
 
   return (
@@ -28,34 +47,23 @@ export default function UpdateProduct({url, addToCart}) {
       <div className='row align-items-baseline'>
             
         
-        
+        <form onSubmit={updateProduct}>
         {products.map(product => (
+
             <div className='col' key={product.id} >
-                <Link to="/" style={{float:"left"}}>Etusivu</Link>
-        <Container >
-            <Row style={{padding:"10px",border:"solid 10px #b0ffc6",marginLeft:"auto",marginRight:"auto",marginTop:"10%",borderRadius:"10px" }}>
-               
-                <Col style={{textAlign:"center"}}>  
-                
-                <img src={url + "images/" + product.image}/>
-                <p style={{paddingTop:"5px"}}>{product.kuvaus}</p>
-                
-                </Col>
-                
-                <Col>
-                <h2 style={{color:"green"}}>{product.tuotenimi}</h2>
-                
-                <h3>{product.hinta}€</h3>
-                <h3>Tuira, Oulu</h3>
-                <button className='btn btn-primary' style={{marginTop:"10px",backgroundColor:"purple"}} onClick={e => addToCart(product)}><Cart3 size={25} color={'white'}></Cart3> Lisää ostoskoriin</button>
-                </Col>
-            
-            </Row>
-        </Container>
+                <Link to="../admin/ManageProducts" style={{float:"left"}}>Takaisin</Link><br />
+                <label>Tuotenimi: </label>
+                <input type="text" name='name' defaultValue={product.tuotenimi} onChange={e => setName(e.target.value)}/><br />
+                <label>Hinta: </label>
+                <input type="text" name='price' defaultValue={product.hinta} onChange={e => setPrice(e.target.value)}/><br />
+                <label>Kuvaus: </label>
+                <input type="text" name='description' style={{'width':"30em",'height':"4em"}} defaultValue={product.kuvaus} onChange={e => setDescription(e.target.value)}/><br />
+                <button>Tallenna muutokset</button>
                  
             </div>
             
         ))}
+        </form>
           
       </div>
         
