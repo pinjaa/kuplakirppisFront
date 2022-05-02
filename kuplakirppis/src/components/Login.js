@@ -52,9 +52,9 @@ export default function Login() {
             }
           })
           .then((response) => {
-            document.getElementById("erroralert").innerHTML="<div class='alert alert-success' role='alert' id='eoralert'>"+ response.data +"  </div>";
-            document.getElementById("loginForm").style=" display : block"
-            document.getElementById("logOut").style=" display : none"
+            document.getElementById("erroralert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+ response.data +"  </div>";
+           document.getElementById("loginForm").style=" display : block"
+           document.getElementById("logOutForm").style=" display : none"  
         })
         
         
