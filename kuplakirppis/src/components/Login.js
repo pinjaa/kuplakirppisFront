@@ -45,7 +45,7 @@ export default function Login() {
             email: email,
           });
 
-          axios.post("http://localhost/kuplakirppisBack/modules/logout.php", json, {
+          axios.post("http://localhost/kuplakirppisBack/modules/login.php", json, {
             headers: {
               'Accept' : 'application/json',
               'Content-Type' : 'application/json'
