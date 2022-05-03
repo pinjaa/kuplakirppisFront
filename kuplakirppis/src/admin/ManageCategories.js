@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import CategoryList from '../components/CategoryList';
 
 export default function ManageCategories({url}) {
@@ -27,6 +28,7 @@ export default function ManageCategories({url}) {
     if (!addingCategory) {
         return (
             <>
+                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
                 <h3>Ylläpidä kategorioita</h3>
                 <div>
                     <label>Kategoria</label>
@@ -43,6 +45,7 @@ export default function ManageCategories({url}) {
     else {
         return (
             <>
+                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
                 <h3>Lisää uusi kategoria</h3>
                 <form onSubmit={saveCategory}>
                     <div>
