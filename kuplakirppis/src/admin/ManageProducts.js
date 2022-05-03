@@ -68,6 +68,7 @@ export default function ManageProducts({url}) {
     if (!addingProduct) {
         return (
             <>
+                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
                 <h3>Ylläpidä tuotteita</h3>
                 <CategoryList 
                         url={url}
@@ -103,6 +104,7 @@ export default function ManageProducts({url}) {
     else {
         return (
             <>
+                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
                 <h3>Lisää uusi tuote</h3>
                 <form onSubmit={save}>
                     <div className="container">
