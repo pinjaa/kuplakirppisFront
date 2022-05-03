@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import CategoryList from '../components/CategoryList';
 
-export default function ManageCategories({url}) {
+export default function ManageCategories({url, isAdmin}) {
     const [newCategory, setNewCategory] = useState("");
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [addingCategory, setAddingCategory] = useState(false);
@@ -25,38 +25,46 @@ export default function ManageCategories({url}) {
         });
     }
 
-    if (!addingCategory) {
-        return (
-            <>
-                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
-                <h3>Ylläpidä kategorioita</h3>
-                <div>
-                    <label>Kategoria</label>
-                    <CategoryList 
-                        url={url}
-                        selectedCategory={selectedCategory}
-                        setSelectedCategory={setSelectedCategory}
-                    />
-                    <button className='btn btn-dark' type='button' onClick={() => setAddingCategory(true)}>Lisää</button>
-                </div>
-            </>
-        )
-    }
-    else {
-        return (
-            <>
-                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
-                <h3>Lisää uusi kategoria</h3>
-                <form onSubmit={saveCategory}>
+    if(isAdmin) {
+        if (!addingCategory) {
+            return (
+                <>
+                    <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
+                    <h3>Ylläpidä kategorioita</h3>
                     <div>
-                        <label>Kategorian nimi</label>
-                        <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} />
+                        <label>Kategoria</label>
+                        <CategoryList 
+                            url={url}
+                            selectedCategory={selectedCategory}
+                            setSelectedCategory={setSelectedCategory}
+                        />
+                        <button className='btn btn-dark' type='button' onClick={() => setAddingCategory(true)}>Lisää</button>
                     </div>
-                    <button className='btn btn-dark' type='button' onClick={() => setAddingCategory(false)} >Peruuta</button>
-                    <button type='submit'>Tallenna</button>
-                </form>
-            </>
+                </>
+            )
+        }
+        else {
+            return (
+                <>
+                    <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
+                    <h3>Lisää uusi kategoria</h3>
+                    <form onSubmit={saveCategory}>
+                        <div>
+                            <label>Kategorian nimi</label>
+                            <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} />
+                        </div>
+                        <button className='btn btn-dark' type='button' onClick={() => setAddingCategory(false)} >Peruuta</button>
+                        <button type='submit'>Tallenna</button>
+                    </form>
+                </>
+            )
+        }
+    }else {
+        return (
+            <div>
+                <h1>Ei oikeuksia</h1>
+                <Link to="/">Palaa etusivulle</Link>
+            </div>
         )
     }
-  
 }

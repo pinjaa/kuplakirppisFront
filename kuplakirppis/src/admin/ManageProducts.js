@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CategoryList from '../components/CategoryList';
 import uuid from 'react-uuid';
 
-export default function ManageProducts({url}) {
+export default function ManageProducts({url, isAdmin}) {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [products, setProducts] = useState([])
     const [addingProduct, setAddingProduct] = useState(false);
@@ -65,83 +65,91 @@ export default function ManageProducts({url}) {
         });
     }
     
-    if (!addingProduct) {
-        return (
-            <>
-                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
-                <h3>Ylläpidä tuotteita</h3>
-                <CategoryList 
-                        url={url}
-                        selectedCategory={selectedCategory}
-                        setSelectedCategory={setSelectedCategory}
-                />
-                <table className='table'>
-                    <thead>
-                        <tr key={uuid()}>
-                            <th>Tuotenimi</th>
-                            <th>Hinta</th>
-                            <th>Kuvaus</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {products.map((product) => (
+    if(isAdmin) {
+        if (!addingProduct) {
+            return (
+                <>
+                    <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
+                    <h3>Ylläpidä tuotteita</h3>
+                    <CategoryList 
+                            url={url}
+                            selectedCategory={selectedCategory}
+                            setSelectedCategory={setSelectedCategory}
+                    />
+                    <table className='table'>
+                        <thead>
                             <tr key={uuid()}>
-                                <td>{product.tuotenimi}</td>
-                                <td>{product.hinta} €</td>
-                                <td>{product.kuvaus}</td>
-                              <td> <Link to={"../admin/UpdateProduct/"+product.ktg_nro+"/"+product.id}><button className='btn btn-primary'>Muokkaa</button></Link>
-                              </td>
+                                <th>Tuotenimi</th>
+                                <th>Hinta</th>
+                                <th>Kuvaus</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <div>
-                    <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(true)}>Lisää</button>
-                </div>
-            </>
-        )
-    }
-    else {
-        return (
-            <>
-                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
-                <h3>Lisää uusi tuote</h3>
-                <form onSubmit={save}>
-                    <div className="container">
-                        <div>
-                            <label>Tuotekuva</label>
-                            <input type="file" name="file" onChange={e => setFile(e.target.files[0])}></input>
-                            {file != null ? (
-                                <>
-                                <p>Filename: {file.name}</p>
-                                <p>filetype: {file.type}</p>
-                                <p>filesize: {file.size}</p>
-                                </>
-                            ):(
-                                <p>Tiedostoa ei valittu</p>
-                            )}
+                        </thead>
+                        <tbody>
+                            {products.map((product) => (
+                                <tr key={uuid()}>
+                                    <td>{product.tuotenimi}</td>
+                                    <td>{product.hinta} €</td>
+                                    <td>{product.kuvaus}</td>
+                                <td> <Link to={"../admin/UpdateProduct/"+product.ktg_nro+"/"+product.id}><button className='btn btn-primary'>Muokkaa</button></Link>
+                                </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <div>
+                        <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(true)}>Lisää</button>
+                    </div>
+                </>
+            )
+        }
+        else {
+            return (
+                <>
+                    <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
+                    <h3>Lisää uusi tuote</h3>
+                    <form onSubmit={save}>
+                        <div className="container">
+                            <div>
+                                <label>Tuotekuva</label>
+                                <input type="file" name="file" onChange={e => setFile(e.target.files[0])}></input>
+                                {file != null ? (
+                                    <>
+                                    <p>Filename: {file.name}</p>
+                                    <p>filetype: {file.type}</p>
+                                    <p>filesize: {file.size}</p>
+                                    </>
+                                ):(
+                                    <p>Tiedostoa ei valittu</p>
+                                )}
+                            </div>
+                        <button>Lataa kuva</button>
                         </div>
-                    <button>Lataa kuva</button>
-                    </div>
-                </form>
-                <form onSubmit={saveProduct}>
-                    <div>
-                        <label>Tuotteen nimi</label>
-                        <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
-                    </div>
-                    <div>
-                        <label>Tuotteen hinta</label>
-                        <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
-                    </div>
-                    <div>
-                        <label>Tuotteen kuvaus</label>
-                        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-                    </div>
-                    <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(false)} >Peruuta</button>
-                    <button type='submit'>Tallenna</button>
-                </form>
-            </>
-        )
-    }
-  
+                    </form>
+                    <form onSubmit={saveProduct}>
+                        <div>
+                            <label>Tuotteen nimi</label>
+                            <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Tuotteen hinta</label>
+                            <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Tuotteen kuvaus</label>
+                            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+                        </div>
+                        <button className='btn btn-dark' type='button' onClick={() => setAddingProduct(false)} >Peruuta</button>
+                        <button type='submit'>Tallenna</button>
+                    </form>
+                </>
+            )
+        }
+    }else {
+        return (
+            <div>
+                <h1>Ei oikeuksia</h1>
+                <Link to="/">Palaa etusivulle</Link>
+            </div>
+          )
+    } 
 }

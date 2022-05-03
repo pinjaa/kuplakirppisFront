@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Display } from 'react-bootstrap-icons';
 
-export default function Login() {
+export default function Login({setIsAdmin}) {
   const [email, setEmail] = useState("");
   const [pword, setPword] = useState("");
       
@@ -26,9 +26,18 @@ export default function Login() {
               }
             })
             .then((response) => {
-              document.getElementById("erroralert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+ response.data +"  </div>";
-              document.getElementById("loginForm").style=" display : none"
-              document.getElementById("logOutForm").style=" display : block"
+              document.getElementById("erroralert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+ response.data["msg"] +"  </div>";
+
+              if(response.data["success"]) {
+                document.getElementById("loginForm").style=" display : none"
+                document.getElementById("logOutForm").style=" display : block"
+              }
+
+              if(response.data["isAdmin"]) {
+                document.getElementById("adminLink").style = "display : block";
+                setIsAdmin(true);
+              }
+              
           }).catch(error => {
               alert(error.response === undefined ? error : error.response.data.error)
           })
@@ -52,12 +61,12 @@ export default function Login() {
             }
           })
           .then((response) => {
-            document.getElementById("erroralert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+ response.data +"  </div>";
+            document.getElementById("erroralert").innerHTML="<div class='alert alert-success' role='alert' id='erroralert'>"+ response.data["msg"] +"  </div>";
            document.getElementById("loginForm").style=" display : block"
            document.getElementById("logOutForm").style=" display : none"  
+           document.getElementById("adminLink").style = "display : none";
+           setIsAdmin(false);
         })
-        
-        
        
       } 
      

@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom';
 
-export default function UpdateProduct({url}) {
+export default function UpdateProduct({url, isAdmin}) {
     const [products, setProducts] = useState([]);
     const [name, setName] = useState(null)
     const [price, setPrice] = useState(0)
@@ -38,35 +38,45 @@ export default function UpdateProduct({url}) {
       });
   }
     
-
-  return (
-    <div className='container-fluid'>
-      
-      <div className='row align-items-baseline'>
-            
+  if(isAdmin) {
+    return (
+      <div className='container-fluid'>
         
-        <form onSubmit={updateProduct}>
-        {products.map(product => (
-
-            <div className='col' key={product.id} >
-                <Link to="../admin/ManageProducts" style={{float:"left"}}>Takaisin</Link><br />
-                <h3>Muokkaa tuotteen tietoja</h3>
-                <label>Tuotenimi: </label>
-                <input type="text" name='name' placeholder={product.tuotenimi} onChange={e => setName(e.target.value)}/><br />
-                <label>Hinta: </label>
-                <input type="text" name='price' placeholder={product.hinta} onChange={e => setPrice(e.target.value)}/><br />
-                <label>Kuvaus: </label>
-                <input type="text" name='description' style={{'width':"30em",'height':"4em"}} placeholder={product.kuvaus} onChange={e => setDescription(e.target.value)}/><br />
-                <button>Tallenna muutokset</button>
-            </div>
-            
-        ))}
-        <div id='alert'></div>
-        </form>
+        <div className='row align-items-baseline'>
+              
           
-      </div>
+          <form onSubmit={updateProduct}>
+          {products.map(product => (
+
+              <div className='col' key={product.id} >
+                  <Link to="../admin/ManageProducts" style={{float:"left"}}>Takaisin</Link><br />
+                  <h3>Muokkaa tuotteen tietoja</h3>
+                  <label>Tuotenimi: </label>
+                  <input type="text" name='name' placeholder={product.tuotenimi} onChange={e => setName(e.target.value)}/><br />
+                  <label>Hinta: </label>
+                  <input type="text" name='price' placeholder={product.hinta} onChange={e => setPrice(e.target.value)}/><br />
+                  <label>Kuvaus: </label>
+                  <input type="text" name='description' style={{'width':"30em",'height':"4em"}} placeholder={product.kuvaus} onChange={e => setDescription(e.target.value)}/><br />
+                  <button>Tallenna muutokset</button>
+              </div>
+              
+          ))}
+          <div id='alert'></div>
+          </form>
+            
+        </div>
+          
         
-      
-    </div>
-  )
+      </div>
+    )
+  }else {
+    return (
+      <div>
+          <h1>Ei oikeuksia</h1>
+          <Link to="/">Palaa etusivulle</Link>
+      </div>
+    )
+  }
+
+
 }

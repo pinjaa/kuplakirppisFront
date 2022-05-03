@@ -4,7 +4,7 @@ import uuid from 'react-uuid'
 import axios from 'axios';
 
 
-export default function ManageUsers({url}) {
+export default function ManageUsers({url, isAdmin}) {
     const [users, setUsers] = useState([])
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
@@ -64,74 +64,83 @@ export default function ManageUsers({url}) {
       }
 
 
-  return (
-    <div>
-        <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
-        <h3>Tarkastele käyttäjätietoja</h3>
-        <table className='table'>
-            <thead>
-                <tr key={uuid()}>
-                    <th>Asiakasnumero</th>
-                    <th>Etunimi</th>
-                    <th>Sukunimi</th>
-                    <th>Email</th>
-                    <th>Puhelinnumero</th>
-                    <th>Osoite</th>
-                    <th>Postinumero</th>
-                    <th>Postitoimipaikka</th>
-                    <th>Adminoikeus</th>
-                </tr>
-            </thead>
-            <tbody>
-                {users.map((user) => (
-                    <tr key={uuid()}>
-                        <td>{user.id}</td>
-                        <td>{user.etunimi}</td>
-                        <td>{user.sukunimi}</td>
-                        <td>{user.email}</td>
-                        <td>{user.puhelinnro}</td>
-                        <td>{user.osoite}</td>
-                        <td>{user.postinro}</td>
-                        <td>{user.postitmp}</td>
-                        <td>{user.admin_oikeus}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+    if(isAdmin) {
+        return (
+            <div>
+                <Link to="../admin/Admin" style={{float:"left"}}>Takaisin</Link><br />
+                <h3>Tarkastele käyttäjätietoja</h3>
+                <table className='table'>
+                    <thead>
+                        <tr key={uuid()}>
+                            <th>Asiakasnumero</th>
+                            <th>Etunimi</th>
+                            <th>Sukunimi</th>
+                            <th>Email</th>
+                            <th>Puhelinnumero</th>
+                            <th>Osoite</th>
+                            <th>Postinumero</th>
+                            <th>Postitoimipaikka</th>
+                            <th>Adminoikeus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map((user) => (
+                            <tr key={uuid()}>
+                                <td>{user.id}</td>
+                                <td>{user.etunimi}</td>
+                                <td>{user.sukunimi}</td>
+                                <td>{user.email}</td>
+                                <td>{user.puhelinnro}</td>
+                                <td>{user.osoite}</td>
+                                <td>{user.postinro}</td>
+                                <td>{user.postitmp}</td>
+                                <td>{user.admin_oikeus}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
 
 
-        <form onSubmit={save}>
-            <h2>Luo käyttäjä</h2>
-            <div class="input-group">
-                    <label>Etunimi</label>
-                    <input type="text" id='etunimi' name="etunimi" value={fname} onChange={e => setFname(e.target.value)}/>
-                </div>
-            <div class="input-group">
-                    <label>Sukunimi</label>
-                    <input type="text" id='sukunimi' name="sukunimi" value={lname} onChange={e => setLname(e.target.value)}/>
-                </div>
-                <div class="input-group">
-                    <label>Sähköposti</label>
-                    <input type="email" id='email' name="email" value={email} onChange={e => setEmail(e.target.value)}/>
-                </div>
-                <div class="input-group">
-                    <label>Käyttäjätyyppi</label>
-                    <select name="usertype" id="usertype"  onChange={e => handleUsertypeChange(e)}>
-                        {
-                            user.map((address, key) => <option key={key} value={key}>{address}</option>)
-                        }
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Salasana</label>
-                    <input type="password" id='salasana' name="salasana"  value={pword} onChange={e => setPword(e.target.value)}/>
-                </div>
-                <div class="input-group">
-                    <button type="submit" class="btn btn-dark" name="register_btn">Luo käyttäjä</button>
-                </div>
-	    </form>
-        <div id='registerError'></div>
-        <div id='errorAlert'></div>
-    </div>
-  )
+                <form onSubmit={save}>
+                    <h2>Luo käyttäjä</h2>
+                    <div class="input-group">
+                            <label>Etunimi</label>
+                            <input type="text" id='etunimi' name="etunimi" value={fname} onChange={e => setFname(e.target.value)}/>
+                        </div>
+                    <div class="input-group">
+                            <label>Sukunimi</label>
+                            <input type="text" id='sukunimi' name="sukunimi" value={lname} onChange={e => setLname(e.target.value)}/>
+                        </div>
+                        <div class="input-group">
+                            <label>Sähköposti</label>
+                            <input type="email" id='email' name="email" value={email} onChange={e => setEmail(e.target.value)}/>
+                        </div>
+                        <div class="input-group">
+                            <label>Adminoikeus</label>
+                            <select name="usertype" id="usertype"  onChange={e => handleUsertypeChange(e)}>
+                                {
+                                    user.map((address, key) => <option key={key} value={key}>{address}</option>)
+                                }
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Salasana</label>
+                            <input type="password" id='salasana' name="salasana"  value={pword} onChange={e => setPword(e.target.value)}/>
+                        </div>
+                        <div class="input-group">
+                            <button type="submit" class="btn btn-dark" name="register_btn">Luo käyttäjä</button>
+                        </div>
+                </form>
+                <div id='registerError'></div>
+                <div id='errorAlert'></div>
+            </div>
+        )
+    }else {
+        return (
+            <div>
+                <h1>Ei oikeuksia</h1>
+                <Link to="/">Palaa etusivulle</Link>
+            </div>
+          )
+    }
 }

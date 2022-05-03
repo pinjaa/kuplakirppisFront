@@ -30,6 +30,7 @@ const URL = 'http://localhost/kuplakirppisBack/';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     if ('cart' in localStorage) {
@@ -78,7 +79,7 @@ function App() {
           <Categories url={URL}/>
 
         <div id='main' style={{paddingBottom:'20px', transition: '0.5s'}} className='col'>
-          <Navbar cart={cart} url={URL}/> 
+          <Navbar cart={cart} url={URL} setIsAdmin={setIsAdmin}/> 
       <div className='container main-container'>
         <Routes>
         <Route path='/' element={<Frontpage />} />
@@ -87,20 +88,20 @@ function App() {
         <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} url={URL}/>} />
         <Route path='/pages/Register' element={<Register />}/>
         <Route path='/pages/OrderForm' element={<OrderForm cart={cart} emptyCart={emptyCart}/>}/>
-        <Route path='/components/Login' element={<Login />}/>
+        <Route path='/components/Login' element={<Login setIsAdmin={setIsAdmin}/>}/>
         <Route path='*' element={<NotFound />} />
         <Route path="/pages/Info" element={<Info />} />
         <Route path="/pages/Feedback" element={<Feedback />} />
         <Route path="/pages/Customer" element={<Customer  url={URL} />} />
         <Route path="/search/:searchPhrase" element={<Products url={URL} addToCart={addToCart}/>} />
         <Route path="/components/CategoryList" element={<CategoryList url={URL} />} /> 
-        <Route path='/admin/ManageCategories' element={<ManageCategories url={URL}/>}/>
-        <Route path='/admin/ManageProducts' element={<ManageProducts url={URL}/>}/>
-        <Route path='/admin/Admin' element={<Admin />}/>
+        <Route path='/admin/ManageCategories' element={<ManageCategories url={URL} isAdmin={isAdmin}/>}/>
+        <Route path='/admin/ManageProducts' element={<ManageProducts url={URL} isAdmin={isAdmin}/>}/>
+        <Route path='/admin/Admin' element={<Admin isAdmin={isAdmin}/>}/>
         <Route path='/pages/Desk' element={<Desk/>}/>
-        <Route path='/admin/UpdateProduct/:categoryId/:productId' element={<UpdateProduct url={URL}/>}/>
-        <Route path='/admin/ManageOrders' element={<ManageOrders url={URL}/>}/>
-        <Route path='/admin/ManageUsers' element={<ManageUsers url={URL}/>}/>
+        <Route path='/admin/UpdateProduct/:categoryId/:productId' element={<UpdateProduct url={URL} isAdmin={isAdmin}/>}/>
+        <Route path='/admin/ManageOrders' element={<ManageOrders url={URL} isAdmin={isAdmin}/>}/>
+        <Route path='/admin/ManageUsers' element={<ManageUsers url={URL} isAdmin={isAdmin}/>}/>
         </Routes>
       </div>
       <div className='mobile-cart'><Cart cart={cart}/></div>

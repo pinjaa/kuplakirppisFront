@@ -6,7 +6,7 @@ import Login from './Login';
 import axios from 'axios';
 import kuplalogo from '../images/kuplalogo2.0.png';
 
-export default function Navbar({cart, url}){
+export default function Navbar({cart, url, setIsAdmin}){
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
@@ -70,7 +70,7 @@ export default function Navbar({cart, url}){
       <div class="wide-nav">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link className='nav-link' to={'../admin/Admin'} style = {{display:'none'}}>ADMIN</Link>
+            <Link id="adminLink" className='nav-link' to={'../admin/Admin'} style = {{display:'none'}}>ADMIN</Link>
           </li>
           <li className="nav-item active">
             <Link className='nav-link' to={'../pages/Info'}>INFO</Link>
@@ -82,7 +82,7 @@ export default function Navbar({cart, url}){
             <div className="dropdown-menu dropdown-menu-end " aria-labelledby="dropdownMenuClickableInside"
             style={{padding:30, backgroundColor: '#b0ffc6' }}>
 
-              <Login>
+              <Login setIsAdmin={setIsAdmin}>
               </Login>
           <br />
       <a href='../pages/Register'> <button className='btn btn-success'>Rekisteröidy</button></a>
@@ -116,6 +116,9 @@ export default function Navbar({cart, url}){
           </div>
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
+              <Link id="adminLink" className='nav-link' to={'../admin/Admin'} style = {{display:'none'}}>ADMIN</Link>
+            </li>
+            <li className="nav-item active">
               <Link style={{display:'block', backgroundColor: '#e0ffe9', paddingLeft: '2em', paddingRight: '2em'}} className='nav-link' to={'../pages/Info'}>INFO</Link>
             </li>
             <li className="nav-item dropdown">
@@ -124,7 +127,7 @@ export default function Navbar({cart, url}){
               </a>
               <div className="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown"
               style={{backgroundColor: '#b0ffc6' }}>
-                <Login></Login>
+                <Login setIsAdmin={setIsAdmin}></Login>
             <br/>
             <a href='../pages/Register'> <button className='btn btn-success'>Rekisteröidy</button></a>
       
