@@ -31,6 +31,7 @@ export default function Login({setIsAdmin}) {
               if(response.data["success"]) {
                 document.getElementById("loginForm").style=" display : none"
                 document.getElementById("logOutForm").style=" display : block"
+                document.getElementById("dropdownMenuClickableInside").innerHTML = "Kirjaudu ulos"
               }
 
               if(response.data["isAdmin"]) {
