@@ -46,10 +46,10 @@ export default function Products({url, addToCart}) {
         {products.map(product => (
             <div className='col-md-4 g-4' key={product.id}>
                 <Link to={'../pages/Tuote/' + product.ktg_nro + '/' + product.id}>
-                  <Card style={{ width: '18rem', padding:'10px',border:'solid 6px #8ceda7bd', marginLeft:'10px'}}>
+                  <Card className="product-card">
                     <Card.Img style={{objectFit: 'cover'}} variant="top" src={url + "images/" + product.image} />
                     <Card.Body style={{paddingBottom:'10px'}}>
-                    <Card.Title>{product.tuotenimi} {product.hinta}€</Card.Title>
+                    <Card.Title className='card-title'>{product.tuotenimi} {product.hinta}€</Card.Title>
     
                     {/* <Card.Text>
                     {product.kuvaus}
